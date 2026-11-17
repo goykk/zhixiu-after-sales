@@ -269,6 +269,9 @@ export interface StrategyMetrics {
   escalation_variant_count: number;
   top1_rate: number;
   top3_rate: number;
+  diagnosable_variant_count?: number;
+  top1_rate_diagnosable?: number;
+  top3_rate_diagnosable?: number;
   avg_steps: number;
   early_probe_rate: number;
   unnecessary_parts_rate: number;

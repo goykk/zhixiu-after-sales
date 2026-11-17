@@ -8,9 +8,9 @@
 data/manuals/<brand-slug>/<model-slug>/<NN>-<topic>.md
 ```
 
-- 每个设备目录固定 4 份手册（安装与安全、故障码、风扇与风道排查、维护清洁），共 5 个设备 20 份。
+- 每个设备目录固定 4 份手册（安装与安全、故障码、风扇与风道排查、维护清洁），共 9 个设备 36 份。
 - 文件首行 `<!-- page: 1 -->` 用于切页，`#` 标题用于切节；`core/rag/chunking.py` 依此生成切片。
-- 手册版本以文件名无关的分页元数据写入数据库，版本号由 `scripts/seed_demo.py` 的 `MANUAL_SPECS` 指定。
+- 手册版本以文件名无关的分页元数据写入数据库，版本号由 `scripts/seed_demo.py` 的 `MANUALS` 指定。
 
 ## 与检索的关系
 
@@ -20,5 +20,5 @@ data/manuals/<brand-slug>/<model-slug>/<NN>-<topic>.md
 ## 新增手册
 
 1. 在对应设备目录下新增 `.md` 文件，保持 `<!-- page: N -->` 与 `#` 结构。
-2. 在 `scripts/seed_demo.py` 的 `MANUAL_SPECS` 中登记 `path/title/version`。
+2. 在 `scripts/seed_demo.py` 的 `MANUALS` 中登记 `path/title/version`。
 3. 重新运行 `python scripts/seed_demo.py`（幂等，已存在的同型号同标题手册会更新正文并重建索引）。

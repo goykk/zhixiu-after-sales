@@ -13,6 +13,10 @@
 - 外部工单号（`SIM-0001` 等）与工单状态；
 - `data/outcomes/v1/sample_outcomes.json` 的 20 条维修结果（`source="simulated"`）。
 
+> 演示库现有 9 台设备、36 份手册；配件目录只覆盖其中 5 个有维修闭环演练数据的型号
+> （AC-Pro 1200、AC-Mini 600、PX-220、PX-450、FZ-30）。其余型号可诊断、可检索，但维修方案
+> 不会给出兼容配件，需先补配件目录。
+
 本轮不接真实外部工单系统，闭环止于 `WORK_ORDER_CREATED → OUTCOME_PENDING → CLOSED`。
 
 ## 2. 配件目录与兼容性

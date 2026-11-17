@@ -21,7 +21,7 @@ from core.cases.service import (
 )
 from core.db.models import AuditLog, DiagnosticStep, Evidence, Hypothesis, Probe, new_id, utcnow
 from core.diagnosis.evidence import list_evidence
-from core.diagnosis.hypotheses import list_hypotheses
+from core.diagnosis.hypotheses import hypothesis_rank_key, list_hypotheses
 from core.policy.rbac import Actor, can
 from core.probes.planner import list_probes, plan_next_probe
 from core.workflow.states import CaseStatus, IllegalTransition, assert_transition
@@ -45,7 +45,13 @@ class DiagnosisResult:
     rationale: str
 
 
-def finalize_diagnosis(db: Session, *, case_id: str, actor: Actor) -> DiagnosisResult:
+def finalize_diagnosis(
+    db: Session,
+    *,
+    case_id: str,
+    actor: Actor,
+    history_weights: dict[str, int] | None = None,
+) -> DiagnosisResult:
     """在满足停止条件时定案；否则按 PENDING_PROBE / INSUFFICIENT_EVIDENCE / PROBE_AVAILABLE 拒绝。"""
     if not can(actor.role, "diagnosis:finalize"):
         raise ApiError(403, "FORBIDDEN", "diagnosis:finalize permission required")
@@ -76,7 +82,7 @@ def finalize_diagnosis(db: Session, *, case_id: str, actor: Actor) -> DiagnosisR
         _transition(case, CaseStatus.HYPOTHESIZING)
 
     hypotheses = list_hypotheses(db, case_id)
-    root_cause = _select_root_cause(hypotheses)
+    root_cause = _select_root_cause(hypotheses, history_weights=history_weights)
     if root_cause is None:
         raise ApiError(
             409,
@@ -215,7 +221,9 @@ def _pending_probe(db: Session, case_id: str) -> Probe | None:
     )
 
 
-def _select_root_cause(hypotheses: list[Hypothesis]) -> Hypothesis | None:
+def _select_root_cause(
+    hypotheses: list[Hypothesis], *, history_weights: dict[str, int] | None = None
+) -> Hypothesis | None:
     candidates = [
         item
         for item in hypotheses
@@ -223,14 +231,15 @@ def _select_root_cause(hypotheses: list[Hypothesis]) -> Hypothesis | None:
     ]
     if not candidates:
         return None
-    return max(candidates, key=lambda item: (item.confidence_score or 0.0, item.cause_code))
+    # 并列规则唯一：分数高者优先，同分按历史计数（仅 D 显式传入）再按 cause_code 升序。
+    return min(candidates, key=lambda item: hypothesis_rank_key(item, history_weights))
 
 
 def _best_supported(hypotheses: list[Hypothesis]) -> Hypothesis | None:
     candidates = [item for item in hypotheses if item.status == "supported"]
     if not candidates:
         return None
-    return max(candidates, key=lambda item: (item.confidence_score or 0.0, item.cause_code))
+    return min(candidates, key=hypothesis_rank_key)
 
 
 def _existing_result(db: Session, case) -> DiagnosisResult:

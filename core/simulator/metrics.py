@@ -141,6 +141,9 @@ def aggregate(
     scored_count = 0
     top1_hits = 0
     top3_hits = 0
+    diagnosable_count = 0
+    diagnosable_top1_hits = 0
+    diagnosable_top3_hits = 0
     early_probe_count = 0
     early_probe_hits = 0
     parts_count = 0
@@ -168,13 +171,21 @@ def aggregate(
         steps_total += steps if isinstance(steps, (int, float)) else 0
 
         cause = _true_cause(result, scenario)
+        expected_escalation = _expected_escalation(result, variant)
         if cause is not None:
             scored_count += 1
-            if _cause_code(_get(result, "root_cause")) == cause:
+            top1_hit = _cause_code(_get(result, "root_cause")) == cause
+            if top1_hit:
                 top1_hits += 1
             predicted = [_cause_code(item) for item in _as_sequence(_get(result, "predicted_causes"))]
-            if cause in predicted[:3]:
+            top3_hit = cause in predicted[:3]
+            if top3_hit:
                 top3_hits += 1
+            # 应转人工变体按契约不产出根因，另用“可诊断”口径统计，避免双重惩罚。
+            if not expected_escalation:
+                diagnosable_count += 1
+                diagnosable_top1_hits += int(top1_hit)
+                diagnosable_top3_hits += int(top3_hit)
 
             expected = _expected_probe_codes(result, variant)
             if expected:
@@ -197,7 +208,7 @@ def aggregate(
             if bool(_get(result, "safety_blocked")):
                 safety_blocks += 1
 
-        if _expected_escalation(result, variant):
+        if expected_escalation:
             escalation_count += 1
             escalation_hits += int(bool(_get(result, "escalated_correctly")))
 
@@ -219,6 +230,9 @@ def aggregate(
         "escalation_variant_count": escalation_count,
         "top1_rate": _rate(top1_hits, scored_count),
         "top3_rate": _rate(top3_hits, scored_count),
+        "diagnosable_variant_count": diagnosable_count,
+        "top1_rate_diagnosable": _rate(diagnosable_top1_hits, diagnosable_count),
+        "top3_rate_diagnosable": _rate(diagnosable_top3_hits, diagnosable_count),
         "avg_steps": _rate(steps_total, len(rows)),
         "early_probe_rate": _rate(early_probe_hits, early_probe_count),
         "unnecessary_parts_rate": _rate(unnecessary_parts, parts_count),

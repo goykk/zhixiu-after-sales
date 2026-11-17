@@ -28,7 +28,7 @@ cd apps/web && npm install && npm run dev   # http://localhost:3000
 - 报告：`data/reports/acceptance-20261116T081057.json`、`docs/acceptance-report.md`
 
 其他：
-- `pytest` 全量：**PASS**（150+ 用例，覆盖率 ≥80%）
+- `pytest` 全量：**PASS**（150+ 用例；CI 以 `--cov=core --cov=services --cov-fail-under=80` 设覆盖率门禁，本机实测 83%）
 - `apps/web` `npm run build`：**成功**（含 `/console` 工作台各页面）
 
 ## 3. 能力清单

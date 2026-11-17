@@ -3,11 +3,13 @@
 import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+import { CaseStepper } from "@/components/case-stepper";
 import { DiagnosisPanel } from "@/components/diagnosis-panel";
 import { RepairPanel } from "@/components/repair-panel";
+import { caseStatusMeta, nextAction } from "@/components/status";
 import { TaskStatus } from "@/components/task-status";
 import { UploadPanel } from "@/components/upload-panel";
-import { Badge, Button, Card, ErrorBanner, Spinner } from "@/components/ui";
+import { Badge, Button, Card, ErrorBanner, PageHeader, Spinner } from "@/components/ui";
 import {
   addEvidence,
   advanceCase,
@@ -158,85 +160,123 @@ export default function CaseDetailPage() {
     !!current &&
     (REPAIR_STATUSES.has(current.status) || !!result || !!summary?.root_cause);
 
+  const statusMeta = current ? caseStatusMeta(current.status) : null;
+  const intakeFirst = current?.status === "DRAFT" || current?.status === "COLLECTING_INFO";
+
   return (
     <div className="space-y-6">
       <div>
-        <Link href="/cases" className="text-sm text-slate-500 hover:text-slate-900">
-          ← 返回案例列表
+        <Link href="/cases" className="text-xs font-medium text-slate-500 transition hover:text-teal-800">
+          ← 返回案例队列
         </Link>
       </div>
 
       {error && <ErrorBanner message={error} onRetry={() => void load()} />}
       {notice && (
-        <div className="rounded-md border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+        <div className="rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
           {notice}
         </div>
       )}
 
-      {current && (
-        <Card
-          title={current.device_model ?? "未绑定设备"}
-          description={current.symptom}
-          actions={
-            <div className="flex flex-wrap items-center gap-2">
-              <Badge tone="blue">{current.status}</Badge>
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => void handleAdvanceAsync()}
-                disabled={action === "advance-async"}
-              >
-                {action === "advance-async" ? "提交中…" : "异步推进诊断"}
-              </Button>
+      {current && statusMeta && (
+        <>
+          <PageHeader
+            eyebrow={`Case detail / ${caseId.slice(0, 8)}`}
+            title={current.device_model ?? "未绑定设备"}
+            description={current.symptom}
+            meta={
+              <>
+                <Badge tone={statusMeta.tone}>{statusMeta.label}</Badge>
+                {current.error_code && (
+                  <span className="rounded-md bg-slate-100 px-2 py-0.5 font-mono text-[10px] font-semibold text-slate-700">
+                    {current.error_code}
+                  </span>
+                )}
+                {current.risk_level && (
+                  <Badge tone={current.risk_level === "high" ? "red" : current.risk_level === "medium" ? "orange" : "neutral"}>
+                    风险 {current.risk_level}
+                  </Badge>
+                )}
+                <span className="text-xs text-slate-500">证据版本 v{current.evidence_version}</span>
+                <span className="text-xs text-slate-500">检查 {current.step_count} 步</span>
+                {current.confidence !== null && (
+                  <span className="text-xs text-slate-500">置信 {current.confidence}</span>
+                )}
+              </>
+            }
+            actions={
+              <div className="flex flex-wrap items-center gap-2">
+                <Button
+                  type="button"
+                  variant={intakeFirst ? "primary" : "secondary"}
+                  onClick={handleIntake}
+                  disabled={action === "intake"}
+                >
+                  {action === "intake" ? "受理中…" : "受理并提取信息"}
+                </Button>
+                <Button
+                  type="button"
+                  variant={intakeFirst ? "secondary" : "primary"}
+                  onClick={() => void handleAdvanceAsync()}
+                  disabled={action === "advance-async"}
+                >
+                  {action === "advance-async" ? "提交中…" : "异步推进诊断"}
+                </Button>
+                <Button type="button" variant="ghost" onClick={() => void load()} disabled={loading}>
+                  刷新
+                </Button>
+                {showRepair && current.status !== "CLOSED" && (
+                  <a
+                    href="#repair-panel"
+                    className="inline-flex items-center justify-center rounded-lg border border-teal-300 bg-teal-50 px-3.5 py-2 text-sm font-semibold text-teal-800 transition hover:bg-teal-100"
+                  >
+                    前往维修方案
+                  </a>
+                )}
+              </div>
+            }
+          />
+
+          <Card
+            eyebrow="Workflow"
+            title="诊断流程与下一步"
+            description="阶段表示案例在闭环链路中的位置，不表示自动执行顺序。"
+            actions={<Badge tone={statusMeta.tone}>{statusMeta.label}</Badge>}
+          >
+            <div className="rounded-lg border border-teal-200 bg-teal-50/60 px-4 py-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded bg-teal-700 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+                  Next
+                </span>
+                <p className="text-sm font-semibold text-teal-950">{nextAction(current.status)}</p>
+              </div>
+              {current.missing_fields && current.missing_fields.length > 0 && (
+                <p className="mt-2 text-xs text-amber-800">
+                  待补充信息：{current.missing_fields.join("、")}
+                </p>
+              )}
+              {current.last_question && (
+                <p className="mt-1 text-xs text-slate-600">待确认：{current.last_question}</p>
+              )}
             </div>
-          }
-        >
-          <dl className="grid gap-2 text-sm sm:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <dt className="text-xs text-slate-500">故障码</dt>
-              <dd className="text-slate-900">{current.error_code ?? "—"}</dd>
+            <div className="mt-5">
+              <CaseStepper status={current.status} />
             </div>
-            <div>
-              <dt className="text-xs text-slate-500">置信 / 风险</dt>
-              <dd className="text-slate-900">
-                {current.confidence ?? "—"} / {current.risk_level ?? "—"}
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs text-slate-500">证据版本</dt>
-              <dd className="text-slate-900">v{current.evidence_version}</dd>
-            </div>
-            <div>
-              <dt className="text-xs text-slate-500">检查步数</dt>
-              <dd className="text-slate-900">{current.step_count}</dd>
-            </div>
-          </dl>
-          {current.missing_fields && current.missing_fields.length > 0 && (
-            <p className="mt-3 text-sm text-amber-700">
-              待补充信息：{current.missing_fields.join("、")}
-            </p>
-          )}
-          {current.last_question && (
-            <p className="mt-2 text-sm text-slate-600">待确认：{current.last_question}</p>
-          )}
-          <div className="mt-4 flex flex-wrap gap-2">
-            <Button type="button" variant="secondary" onClick={handleIntake} disabled={action === "intake"}>
-              {action === "intake" ? "受理中…" : "受理并提取信息"}
-            </Button>
-            <Button type="button" variant="secondary" onClick={() => void load()} disabled={loading}>
-              刷新
-            </Button>
-          </div>
-          {advanceTaskId && (
-            <div className="mt-3">
-              <TaskStatus taskId={advanceTaskId} onDone={() => void load()} />
-            </div>
-          )}
-        </Card>
+            {advanceTaskId && (
+              <div className="mt-4 border-t border-slate-200 pt-4">
+                <TaskStatus taskId={advanceTaskId} onDone={() => void load()} />
+              </div>
+            )}
+          </Card>
+        </>
       )}
 
       {detail && (
-        <Card title="证据文件" description="支持 jpg/png/webp/pdf/md/txt，单文件不超过 10 MB。">
+        <Card
+          eyebrow="Evidence files"
+          title="证据文件"
+          description="支持 jpg/png/webp/pdf/md/txt，单文件不超过 10 MB；上传后进入证据账本。"
+        >
           <UploadPanel uploads={detail.uploads} onUpload={handleUpload} />
         </Card>
       )}
@@ -257,12 +297,14 @@ export default function CaseDetailPage() {
       )}
 
       {current && showRepair && (
-        <RepairPanel
-          caseId={caseId}
-          caseStatus={current.status}
-          deviceModel={current.device_model}
-          onCaseChanged={load}
-        />
+        <div id="repair-panel" className="scroll-mt-24">
+          <RepairPanel
+            caseId={caseId}
+            caseStatus={current.status}
+            deviceModel={current.device_model}
+            onCaseChanged={load}
+          />
+        </div>
       )}
     </div>
   );

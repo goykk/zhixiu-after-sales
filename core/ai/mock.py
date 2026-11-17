@@ -13,7 +13,13 @@ from core.ai.base import OCRBlock, OCRResult
 KNOWN_MODELS: tuple[str, ...] = (
     "AuroraHome AC-Pro 1200",
     "AuroraHome AC-Pro 900",
+    "AuroraHome AC-Mini 600",
+    "AuroraHome AC-Lite 500",
     "AuroraHome WH-3000",
+    "Northwind DH-200",
+    "NovaDesk PX-220",
+    "NovaDesk PX-450",
+    "VentoCool FZ-30",
 )
 
 MODEL_PATTERN = re.compile(r"[A-Z]{2,6}-?\d{3,6}[A-Z]?", re.IGNORECASE)

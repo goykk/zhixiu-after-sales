@@ -1,4 +1,4 @@
-"""幂等种子数据：4 个账号、5 台设备、20 份手册（并索引）与 1 个演示案例。
+"""幂等种子数据：4 个账号、9 台设备、36 份手册（并索引）与 1 个演示案例。
 
 用法：
 
@@ -46,6 +46,10 @@ DEVICES: tuple[tuple[str, str, str, str, str, str], ...] = (
     ("wh-3000", "AuroraHome", "WH-3000", "HW-3.1", "4.0.3", "heat_pump_water_heater"),
     ("ac-lite-500", "AuroraHome", "AC-Lite 500", "HW-1.1", "2.2.0", "air_conditioner"),
     ("dh-200", "Northwind", "DH-200", "HW-1.0", "1.8.4", "dehumidifier"),
+    ("ac-mini-600", "AuroraHome", "AC-Mini 600", "HW-1.6", "2.8.3", "air_conditioner"),
+    ("px-220", "NovaDesk", "PX-220", "HW-1.3", "1.6.4", "desktop_air_conditioner"),
+    ("px-450", "NovaDesk", "PX-450", "HW-1.6", "2.1.2", "desktop_air_conditioner"),
+    ("fz-30", "VentoCool", "FZ-30", "HW-2.1", "3.2.1", "air_cooled_chiller"),
 )
 
 MANUALS: tuple[tuple[str, str, str], ...] = (
@@ -69,6 +73,22 @@ MANUALS: tuple[tuple[str, str, str], ...] = (
     ("dh-200", "data/manuals/northwind/dh-200/02-error-codes.md", "v1.3"),
     ("dh-200", "data/manuals/northwind/dh-200/03-fan-and-airflow-troubleshooting.md", "v1.3"),
     ("dh-200", "data/manuals/northwind/dh-200/04-maintenance-and-cleaning.md", "v1.2"),
+    ("ac-mini-600", "data/manuals/aurorahome/ac-mini-600/01-installation-and-safety.md", "v1.0"),
+    ("ac-mini-600", "data/manuals/aurorahome/ac-mini-600/02-error-codes.md", "v1.0"),
+    ("ac-mini-600", "data/manuals/aurorahome/ac-mini-600/03-fan-and-airflow-troubleshooting.md", "v1.0"),
+    ("ac-mini-600", "data/manuals/aurorahome/ac-mini-600/04-maintenance-and-cleaning.md", "v1.0"),
+    ("px-220", "data/manuals/novadesk/px-220/01-installation-and-safety.md", "v1.1"),
+    ("px-220", "data/manuals/novadesk/px-220/02-error-codes.md", "v1.1"),
+    ("px-220", "data/manuals/novadesk/px-220/03-fan-and-airflow-troubleshooting.md", "v1.1"),
+    ("px-220", "data/manuals/novadesk/px-220/04-maintenance-and-cleaning.md", "v1.0"),
+    ("px-450", "data/manuals/novadesk/px-450/01-installation-and-safety.md", "v1.2"),
+    ("px-450", "data/manuals/novadesk/px-450/02-error-codes.md", "v1.2"),
+    ("px-450", "data/manuals/novadesk/px-450/03-fan-and-airflow-troubleshooting.md", "v1.2"),
+    ("px-450", "data/manuals/novadesk/px-450/04-maintenance-and-cleaning.md", "v1.1"),
+    ("fz-30", "data/manuals/ventocool/fz-30/01-installation-and-safety.md", "v1.0"),
+    ("fz-30", "data/manuals/ventocool/fz-30/02-error-codes.md", "v1.0"),
+    ("fz-30", "data/manuals/ventocool/fz-30/03-fan-and-airflow-troubleshooting.md", "v1.0"),
+    ("fz-30", "data/manuals/ventocool/fz-30/04-maintenance-and-cleaning.md", "v1.0"),
 )
 
 DEMO_CASE_SYMPTOM = "制冷时风扇区域有摩擦异响，出风很小，面板显示 E106。"
@@ -173,7 +193,7 @@ def seed_case(db: Session) -> bool:
             Case.error_code == "E106",
             Case.symptom == DEMO_CASE_SYMPTOM,
         )
-    ).scalar_one_or_none()
+    ).scalars().first()
     if existing is not None:
         return False
     create_case(

@@ -88,3 +88,26 @@ def test_builder_generates_loadable_dataset(tmp_path):
     assert len(loaded) == 60
     assert sum(1 for item in loaded if item.holdout) == 12
     assert all(len(item.variants) == 3 for item in loaded)
+
+
+def test_builder_probe_answers_are_consistent_and_cover_eligible_probes(tmp_path):
+    mod = _load_script("build_scenarios_from_real")
+    path = _write_records(tmp_path / "enough.jsonl", [_valid_record(i) for i in range(60)])
+    out = tmp_path / "scenarios.json"
+    assert mod.main(["--file", str(path), "--out", str(out)]) == 0
+    loaded = load_scenarios(out)
+
+    for scenario in loaded:
+        eligible = {spec.code for spec in mod._eligible_probes(scenario.error_code)}
+        for variant in scenario.variants:
+            assert set(variant.probe_answers) == eligible, (
+                f"{scenario.id} 缺少检查答案会留下 pending probe"
+            )
+            for code, observed in variant.probe_answers.items():
+                spec = next(
+                    item for item in PROBE_CATALOG[scenario.error_code] if item.code == code
+                )
+                effect = spec.expected_outcomes[observed]
+                assert scenario.true_cause_code not in effect.get("refutes", []), (
+                    f"{scenario.id}/{code} 的观察值反驳了真实根因"
+                )

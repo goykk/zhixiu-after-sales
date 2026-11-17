@@ -192,6 +192,15 @@ def _clamp01(value: float) -> float:
 
 def _matches(meta: dict[str, Any], active: dict[str, str]) -> bool:
     for key, expected in active.items():
-        if normalize_text(meta.get(key)) != expected:
+        value = normalize_text(meta.get(key))
+        if key == "model":
+            # 型号过滤同时接受「model」与「brand + model」两种写法：
+            # 设备档案返回 model，切片元数据保存完整品牌型号。
+            brand = normalize_text(meta.get("brand"))
+            full = f"{brand} {value}".strip()
+            if value != expected and full != expected:
+                return False
+            continue
+        if value != expected:
             return False
     return True

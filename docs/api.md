@@ -19,10 +19,15 @@
 | 409 | `INSUFFICIENT_EVIDENCE` | 无 high/medium 级 supported 假设 |
 | 409 | `PROBE_AVAILABLE` | 仍有更高增益的安全检查未执行 |
 | 409 | `PROBE_NOT_PENDING` | 重复回写检查结果或状态不允许 |
+| 409 | `WORK_ORDER_EXISTS` / `IDEMPOTENCY_KEY_CONFLICT` | 案例已有工单、幂等键被其他案例占用 |
+| 409 | `OUTCOME_EXISTS` | 同一工单重复提交维修结果 |
+| 404 | `TASK_NOT_FOUND` | 异步任务不存在或已过期 |
 | 422 | `VALIDATION_ERROR` | 请求体校验失败 |
 | 422 | `UPLOAD_REJECTED` | 上传类型/大小/内容不合法（不落盘） |
 | 422 | `INVALID_EVIDENCE` | 证据枚举非法或 quote 为空 |
 | 422 | `INVALID_OBSERVATION` | 观察值不匹配该检查的预期结果 |
+| 422 | `LIMIT_EXCEEDED` | 评测 limit 超出 1–20 |
+| 404 | `RUN_NOT_FOUND` | 评测运行记录不存在 |
 | 500 | `STORAGE_ERROR` / `INTERNAL_ERROR` | 对象存储失败、未捕获异常 |
 
 ## 2. 认证与用户
@@ -87,7 +92,53 @@ risk_level, score, rationale`。
 `DiagnosisOut`：`{case_id, case_status, root_cause: HypothesisOut | null, evidence_chain: [EvidenceOut],
 unresolved: [str], rationale}`。
 
-## 6. 权限矩阵
+## 6. 维修闭环与运营
+
+### 6.1 维修方案与配件
+
+| 方法 | 路径 | 权限 | 说明 |
+| --- | --- | --- | --- |
+| POST | `/cases/{id}/repair-plan` | `repair:write` | 基于诊断结论生成自处理/寄修/上门/换件候选与推荐；`DIAGNOSED→REPAIR_PLANNING`，已在 `REPAIR_PLANNING` 幂等返回 |
+| GET | `/cases/{id}/repair-plan` | owner/staff | 最近一次维修方案（未生成返回 404） |
+| GET | `/parts?device_model=` | `part:read` | 按型号返回配件目录：配件号、库存、硬件区间与兼容性 |
+| GET | `/parts/{part_no}/compatibility?device_model=&hardware_version=` | `part:read` | 单件兼容性：`equivalent` / `replacement` / `requires_adapter` / `incompatible` |
+
+维修方案只做候选与推荐，不自动下单；换件候选必须通过配件兼容性校验，不兼容件不进入推荐。
+
+### 6.2 审批与工单
+
+| 方法 | 路径 | 权限 | 说明 |
+| --- | --- | --- | --- |
+| POST | `/cases/{id}/submit-approval` | `repair:write` | `REPAIR_PLANNING→APPROVAL_PENDING`；重复提交幂等 |
+| POST | `/cases/{id}/approvals` | `approval:decide` | `{decision: approve\|reject, reason?}`；批准保持 `APPROVAL_PENDING`，驳回转 `NEED_HUMAN` |
+| GET | `/cases/{id}/approvals` | owner/staff | 审批记录列表 |
+| POST | `/cases/{id}/work-orders` | `workorder:create` | `{idempotency_key, assignee?}`；批准后建单，`APPROVAL_PENDING→WORK_ORDER_CREATED`；同键同案例返回原单，跨案例 409 |
+| GET | `/work-orders?case_id=&limit=&offset=` | `workorder:read` | 工单列表；technician 仅见指派给自己的工单 |
+| GET | `/work-orders/{work_order_id}` | `workorder:read` | 工单详情（案例、审批、结果） |
+
+工单幂等键唯一；`created=false` 表示命中已有工单。未批准或状态不符返回 409 `ILLEGAL_TRANSITION`。
+
+### 6.3 维修结果与关闭
+
+| 方法 | 路径 | 权限 | 说明 |
+| --- | --- | --- | --- |
+| POST | `/work-orders/{id}/outcome` | `outcome:write` | `{actual_cause_code, action, parts_replaced, resolved, note?}`；`WORK_ORDER_CREATED→OUTCOME_PENDING`，每单唯一，重复 409 `OUTCOME_EXISTS` |
+| GET | `/cases/{id}/outcomes` | `outcome:read` | 结果列表，含诊断一致/差异比对（`match` / `mismatch` / `unknown`） |
+| POST | `/cases/{id}/close` | `approval:decide` 或 `workorder:update` | 允许 `CLOSED` 的状态迁入终态；已关闭幂等返回 |
+
+### 6.4 评测、任务、概览与审计
+
+| 方法 | 路径 | 权限 | 说明 |
+| --- | --- | --- | --- |
+| GET | `/eval/scenarios/runs?limit=` | `eval:read` | 消融运行列表：指标、门禁、失败案例、报告路径 |
+| GET | `/eval/scenarios/runs/{run_id}` | `eval:read` | 单次运行详情（含失败案例与报告链接） |
+| POST | `/eval/scenarios/run?async=true` | `eval:run` | `{split?, strategies?, limit?}`；数据集取服务端配置；同步 201，异步 202 + `task_id` |
+| GET | `/tasks?limit=&owner=` | 已登录 | 当前用户任务列表（24h TTL） |
+| GET | `/tasks/{task_id}` | 已登录 | 任务状态与结果；不存在 404 `TASK_NOT_FOUND` |
+| GET | `/overview` | 已登录 | 工作台概览：案例状态分布、待办、最近评测 |
+| GET | `/audit-logs?action=&actor_id=&limit=` | `audit:read` | 审计日志（载荷已脱敏） |
+
+## 7. 权限矩阵
 
 | 动作 | user | technician | agent | admin |
 | --- | --- | --- | --- | --- |
@@ -99,12 +150,21 @@ unresolved: [str], rationale}`。
 | `hypothesis:write` |  |  | ✓ | ✓ |
 | `probe:write` |  | ✓ | ✓ | ✓ |
 | `diagnosis:finalize` |  |  | ✓ | ✓ |
+| `part:read` | ✓ | ✓ | ✓ | ✓ |
+| `repair:write` |  | ✓ | ✓ | ✓ |
+| `approval:decide` |  |  | ✓ | ✓ |
+| `workorder:create` |  |  | ✓ | ✓ |
+| `workorder:read` |  | ✓ | ✓ | ✓ |
+| `workorder:update` |  | ✓ | ✓ | ✓ |
+| `outcome:write` |  | ✓ |  | ✓ |
+| `outcome:read` | ✓ | ✓ | ✓ | ✓ |
+| `eval:run` / `eval:read` |  |  | ✓ | ✓ |
 | `audit:read` |  |  | ✓ | ✓ |
 
 案例归属隔离由 `can_access_case` 统一判定：非 `case:read_all` 角色只能访问自己的案例，
 越权返回 403 且不泄露资源内容。
 
-## 7. 调用示例
+## 8. 调用示例
 
 ```bash
 BASE=http://localhost:8000/api/v1

@@ -122,7 +122,7 @@ function OptionItem({ option, recommended }: { option: RepairOption; recommended
       <div className="flex flex-wrap items-center gap-2">
         <span className="font-medium text-slate-900">{option.label}</span>
         <Badge tone="blue">{ACTION_LABELS[option.action] ?? option.action}</Badge>
-        {recommended && <Badge tone="purple">推荐</Badge>}
+        {recommended && <Badge tone="green">推荐</Badge>}
         <Badge tone={option.parts_compatible ? "green" : "red"}>
           {option.parts_compatible ? "配件兼容" : "配件不兼容"}
         </Badge>
@@ -382,6 +382,7 @@ export function RepairPanel({
       )}
 
       <Card
+        eyebrow="Repair plan"
         title="维修方案"
         description="仅在诊断结论完成后可生成；推荐方案要求配件兼容且费用最低。"
         actions={<Badge tone="blue">{caseStatus}</Badge>}
@@ -427,6 +428,7 @@ export function RepairPanel({
       </Card>
 
       <Card
+        eyebrow="Parts catalog"
         title="配件兼容与库存"
         description={deviceModel ? `设备型号：${deviceModel}` : "案例未绑定设备型号"}
       >
@@ -465,6 +467,7 @@ export function RepairPanel({
       </Card>
 
       <Card
+        eyebrow="Approval"
         title="提交审批与审批决定"
         description="提交后案例进入 APPROVAL_PENDING；批准保持待办，驳回转人工处理。"
       >
@@ -536,6 +539,7 @@ export function RepairPanel({
       </Card>
 
       <Card
+        eyebrow="Work order"
         title="工单"
         description="创建工单需先获得批准；同一幂等键重复提交返回原工单。"
       >
@@ -589,6 +593,7 @@ export function RepairPanel({
       </Card>
 
       <Card
+        eyebrow="Outcome"
         title="维修结果录入"
         description="结果只能记录一次，不可覆盖；修订需新建工单。"
       >
@@ -713,7 +718,7 @@ export function RepairPanel({
         )}
       </Card>
 
-      <Card title="关闭案例" description="关闭后案例闭环结束，只允许查看。">
+      <Card eyebrow="Closure" title="关闭案例" description="关闭后案例闭环结束，只允许查看。">
         <div className="flex flex-wrap items-center gap-2">
           <Button
             type="button"

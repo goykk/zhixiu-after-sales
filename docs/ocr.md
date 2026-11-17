@@ -197,7 +197,7 @@ python -m pytest tests/test_ocr_providers.py -q
 ## 8. 已知限制
 
 1. **Python 3.13 与 Paddle 兼容性**：`paddlepaddle` 的 wheel 对新版本 Python 支持滞后，3.13 下常无法安装；
-   项目约定的运行时是 Python 3.12。3.13 环境推荐改用 `OCR_PROVIDER=rapid`（ONNX 实现，纯 pip 可装）；
+   项目约定运行时为 Python 3.12+（CI 3.12，本机验证 3.13）。3.13 环境推荐改用 `OCR_PROVIDER=rapid`（ONNX 实现，纯 pip 可装）；
    两者都不可用时 `available()=False`，只能得到 Mock 结果（并已追踪回退），闭环不受影响。
 2. **Tesseract 二进制与语言包**：`pytesseract` 只是包装，必须另装系统 `tesseract` 且 PATH 可找到；
    中文识别还需 `chi_sim` 语言包，缺任一即 `OCR_UNAVAILABLE`。

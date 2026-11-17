@@ -255,7 +255,7 @@ def generate_hypotheses(db: Session, *, case_id: str, actor: Actor) -> list[Hypo
         case.status = CaseStatus.HYPOTHESIZING.value
         case.updated_at = utcnow()
 
-    hypotheses.sort(key=lambda h: (-(h.confidence_score or 0.0), h.cause_code))
+    hypotheses.sort(key=hypothesis_rank_key)
     payload = {
         "case_id": case_id,
         "error_code": case.error_code,
@@ -337,4 +337,20 @@ def apply_evidence(
 
 def list_hypotheses(db: Session, case_id: str) -> list[Hypothesis]:
     rows = db.query(Hypothesis).filter(Hypothesis.case_id == case_id).all()
-    return sorted(rows, key=lambda h: (-(h.confidence_score or 0.0), h.cause_code))
+    return sorted(rows, key=hypothesis_rank_key)
+
+
+def hypothesis_rank_key(
+    hypothesis: Hypothesis, history_weights: dict[str, int] | None = None
+) -> tuple[float, int, str]:
+    """候选排序唯一口径：分数降序 → 历史计数降序 → cause_code 升序。
+
+    ``history_weights`` 仅由消融 D 显式传入，用于同分时优先历史高频根因；
+    普通诊断链路不传，等价于“同分按 cause_code 升序”。
+    """
+    history_count = (history_weights or {}).get(hypothesis.cause_code, 0)
+    return (
+        -(hypothesis.confidence_score or 0.0),
+        -history_count,
+        hypothesis.cause_code,
+    )

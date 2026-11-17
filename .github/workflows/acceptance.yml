@@ -23,7 +23,7 @@ jobs:
         working-directory: apps/web
         run: npm ci
       - name: Run pytest
-        run: python -m pytest -q
+        run: python -m pytest -q --cov=core --cov=services --cov-fail-under=80
       - name: Check production config gate
         env:
           ENV: prod

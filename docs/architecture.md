@@ -9,7 +9,7 @@
 浏览器 (apps/web)
    │  fetch /api/v1/*（Bearer JWT）
    ▼
-services/api  ── routes/*（认证、案例、上传、证据、假设、检查、诊断、设备、手册、检索）
+services/api  ── routes/*（认证、案例、上传、证据、假设、检查、诊断、设备、手册、检索、维修、配件、审批、工单、结果、评测、任务、概览、审计）
    │
    ├─ core/cases        案例用例：创建、受理、可见性、序列化
    ├─ core/diagnosis    证据账本、假设与置信、诊断编排（结论）
@@ -20,7 +20,7 @@ services/api  ── routes/*（认证、案例、上传、证据、假设、检
    ├─ core/policy       RBAC 权限矩阵
    ├─ core/observability 追踪与脱敏
    ├─ core/ai           LLM / Embedding / OCR（Ollama 或 Mock）
-   └─ core/db           engine / Session / 12 张表
+   └─ core/db           engine / Session / 19 张表
 ```
 
 ## 2. 模块边界（谁写状态，谁只读）
@@ -32,13 +32,17 @@ services/api  ── routes/*（认证、案例、上传、证据、假设、检
 | `core/diagnosis/hypotheses` | 规则树、支持/反对计数、置信级别 | 不得把无支持证据的根因标记为 supported |
 | `core/probes/planner` | 过滤、评分、幂等规划、结果回写 | 高风险检查不得进入候选；同一检查不得重复推荐 |
 | `core/diagnosis/orchestrator` | 结论生成与诊断汇总 | 不得只返回模型文本，结论必须绑定证据链 |
+| `core/repair` | 维修方案模板、候选生成与推荐 | 不得自动下单或跳过兼容性校验 |
+| `core/parts` | 配件目录、兼容/替代/库存校验 | 不得把不兼容配件推荐为可更换件 |
+| `core/policy` | RBAC、审批、幂等工单与受控工具 | 不得绕过状态机或重复建单 |
+| `core/outcome` | 真实结果回收、诊断一致性比对与关闭 | 结果唯一且不可覆盖，不得改写诊断结论 |
 | `core/workflow/states` | 合法迁移唯一裁决点 | 任何模块不得直接写 `Case.status` |
 | `core/ai/*` | Provider 实现 | 业务代码只通过 `factory` 获取，失败必须抛错不伪造成功 |
 
 状态变更只允许经 C-CASE、C-EVIDENCE、C-HYPOTHESIS、C-PROBE、C-DIAG-ORCH 的服务函数，
 每次变更写 `DiagnosticStep` 与 `AuditLog`。
 
-## 3. 数据模型（12 张表）
+## 3. 数据模型（19 张表）
 
 | 表 | 关键约束 |
 | --- | --- |
@@ -55,6 +59,12 @@ services/api  ── routes/*（认证、案例、上传、证据、假设、检
 | `eval_scenarios` | 场景集（本轮用于登记 E106 场景） |
 | `audit_logs` | 操作者、动作、资源与脱敏后的载荷 |
 | `uploads` | 多模态扩展表：案例上传的来源登记与内容寻址键 |
+| `parts` | 配件号、适用型号/硬件区间、库存与替代关系 |
+| `part_compatibilities` | 配件兼容矩阵（equivalent/replacement/requires_adapter/incompatible） |
+| `approvals` | 审批记录：提交人、审批人、decision 与理由 |
+| `work_orders` | 幂等键唯一的工单，关联案例与派单人 |
+| `repair_outcomes` | 每张工单唯一的结果：真实根因、动作、更换件、是否解决 |
+| `eval_run_records` | 消融运行记录：指标、门禁、失败案例与报告路径 |
 
 ## 4. 运行形态
 

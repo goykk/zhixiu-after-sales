@@ -60,6 +60,10 @@ SIMULATOR_DISPLAY_NAME = "模拟诊断机器人"
 
 HISTORY_WEIGHT_STEP = 0.05
 HISTORY_WEIGHT_CAP = 0.15
+# 历史结果只作为“接近候选”的微调：单条记录不生效，落后当前最高分超过该差距也不生效，
+# 避免 21 条模拟结果把证据已经明确否定的根因抬成首选。
+HISTORY_MIN_COUNT = 2
+HISTORY_MAX_GAP = 0.10
 REPLACE_PART = "replace_part"
 
 # 与 C-SIM@1 B.4 的 PARTS_REQUIRED_CAUSES 同口径：这些根因的正常修复需要换件，
@@ -323,13 +327,16 @@ def _run_ledger(
                 needs_human = True
                 break
 
+    history_weights: dict[str, int] = {}
     if strategy is Strategy.D and not needs_human:
-        _apply_history_weight(db, case)
+        history_weights = _apply_history_weight(db, case)
 
     root_cause: str | None = None
     if not needs_human:
         try:
-            diagnosis = finalize_diagnosis(db, case_id=case.id, actor=actor)
+            diagnosis = finalize_diagnosis(
+                db, case_id=case.id, actor=actor, history_weights=history_weights
+            )
             root_cause = diagnosis.root_cause.cause_code if diagnosis.root_cause is not None else None
         except ApiError as exc:
             if exc.code not in _STOP_CODES:
@@ -470,20 +477,34 @@ def _historical_weights(db: Any, error_code: str | None) -> dict[str, int]:
     return {str(code): int(count) for code, count in db.execute(stmt).all()}
 
 
-def _apply_history_weight(db: Any, case: Case) -> None:
-    """D：按同故障码历史真实根因频率加权，权重只来自 RepairOutcome。"""
+def _apply_history_weight(db: Any, case: Case) -> dict[str, int]:
+    """D：按同故障码历史真实根因频率加权，权重只来自 RepairOutcome。
+
+    仅对“接近当前最高分”的候选生效（差距 ≤ ``HISTORY_MAX_GAP``），并要求历史样本
+    至少 ``HISTORY_MIN_COUNT`` 条；历史是排序微调，不覆盖证据明确的结论。
+    返回可参与同分排序的历史计数（已按最小样本过滤）。
+    """
     weights = _historical_weights(db, case.error_code)
     if not weights:
-        return
-    for hypothesis in list_hypotheses(db, case.id):
+        return {}
+    hypotheses = list_hypotheses(db, case.id)
+    if not hypotheses:
+        return {}
+    top_score = max(float(item.confidence_score or 0.0) for item in hypotheses)
+    changed = False
+    for hypothesis in hypotheses:
         count = weights.get(hypothesis.cause_code, 0)
-        if not count:
+        if count < HISTORY_MIN_COUNT:
+            continue
+        score = float(hypothesis.confidence_score or 0.0)
+        if top_score - score > HISTORY_MAX_GAP:
             continue
         boost = min(HISTORY_WEIGHT_CAP, HISTORY_WEIGHT_STEP * count)
-        hypothesis.confidence_score = round(
-            min(1.0, float(hypothesis.confidence_score or 0.0) + boost), 4
-        )
-    db.commit()
+        hypothesis.confidence_score = round(min(1.0, score + boost), 4)
+        changed = True
+    if changed:
+        db.commit()
+    return {code: count for code, count in weights.items() if count >= HISTORY_MIN_COUNT}
 
 
 def _simulator_actor(db: Any) -> Actor:

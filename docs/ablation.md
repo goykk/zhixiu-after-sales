@@ -87,13 +87,15 @@ holdout 按场景序号每 5 个取 1 标记，因此起点即 20% 留出。
 | A | RAG-only 基线 | 按规则树生成候选根因，不规划、不写 probe | `steps` 恒为 0；最高候选为 `high` 时 `DIAGNOSED`，否则 `NEED_HUMAN` |
 | B | 证据账本 + 状态机 | 证据 → 假设 → `finalize_diagnosis`（不规划） | `steps` 恒为 0；靠证据支持/反对计数收敛 |
 | C | + 主动检查规划 | 证据 → 假设 → 循环 `plan_next_probe` / `record_probe_result`（用场景 `probe_answers`）→ `finalize_diagnosis` | `steps` 为实际执行的检查数 |
-| D | + 结果感知排序 | 同 C，但用 `RepairOutcome.actual_cause_code` 对同 `error_code` 的历史根因加权排序 | 无历史时退化为 C；不得改变安全规则与转人工判定 |
+| D | + 结果感知排序 | 同 C，但用 `RepairOutcome.actual_cause_code` 对同 `error_code` 的历史根因加权排序 | 无历史时退化为 C；仅对落后最高分 ≤0.10 且历史样本 ≥2 的候选加分（步长 0.05、上限 0.15）；同分按历史计数降序、`cause_code` 升序 |
 
 要点：
 
 - 每个变体在**独立隔离案例**中运行，结束后清理，策略间不共享案例状态；
 - A/B 不产生检查步数，因此 `avg_steps` 的对比只在 B → C/D 之间有意义；
 - D 的权重唯一来源是历史维修结果表 `RepairOutcome`，**不得**读取场景的 `true_cause_code`，否则消融失效；
+  D 的历史加权只做“近分候选”排序微调（差距 ≤0.10、样本 ≥2），不覆盖证据明确的结论，也不改变安全规则与转人工判定；
+- 同分裁决统一为“分数降序 → 历史计数降序 → `cause_code` 升序”，保证 A/B/C/D 与页面展示一致；
 - 任何 `ProviderError` / `IllegalTransition` 记入 `ScenarioResult.error` 并计为失败，不中断整体运行。
 
 ## 3. 指标口径
@@ -114,6 +116,13 @@ holdout 按场景序号每 5 个取 1 标记，因此起点即 20% 留出。
 | `escalation_rate` | `expected_escalation=true` 的变体中 `escalated_correctly`（既 `needs_human` 又应升级）的占比 |
 | `citation_accuracy` | `citation_hit=true` 的变体占比（结论引用命中该变体期望的手册证据 `expected_evidence_manual_ids`） |
 | `completion_rate` | `completed=true` 的变体占比（无 `ProviderError` / `IllegalTransition` 且流程走完） |
+| `diagnosable_variant_count` | 剔除 `expected_escalation=true` 后的可诊断变体数 |
+| `top1_rate_diagnosable` | 仅可诊断变体的 Top-1 命中率；分母不含应转人工的安全变体 |
+| `top3_rate_diagnosable` | 仅可诊断变体的 Top-3 命中率；分母不含应转人工的安全变体 |
+
+保守口径 `top1_rate`/`top3_rate` 的分母包含 `expected_escalation=true` 的安全变体，因此会低于
+`*_diagnosable`；门禁仍使用保守口径（`top3_rate ≥ 0.85`、`safety_block_rate == 1.0`、
+`completion_rate ≥ 0.8`），可诊断口径只用于定位“模型/规则本可诊断却被安全样本拉低”的差距。
 
 `PARTS_REQUIRED_CAUSES`：
 

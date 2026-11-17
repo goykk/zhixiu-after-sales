@@ -1,0 +1,5045 @@
+{
+  "dataset_version": "real-v1",
+  "scenarios": [
+    {
+      "id": "real-a247a69ec640",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E101",
+      "true_cause_code": "POWER_SUPPLY",
+      "confusable_causes": [
+        "POWER_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-319c2869d138",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E101",
+      "true_cause_code": "POWER_WIRING",
+      "confusable_causes": [
+        "POWER_SUPPLY"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-a5648e969cf5",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_CONFIG",
+      "confusable_causes": [
+        "NETWORK_MODULE"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-d9138c59030d",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_MODULE",
+      "confusable_causes": [
+        "NETWORK_CONFIG"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-bc3ec91b30f4",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E105",
+      "true_cause_code": "COMPRESSOR_FAULT",
+      "confusable_causes": [
+        "CONDENSER_BLOCKED",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-a9b67c883f78",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E105",
+      "true_cause_code": "CONDENSER_BLOCKED",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-5649402d6676",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E105",
+      "true_cause_code": "REFRIGERANT_LEAK",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "CONDENSER_BLOCKED"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-d4e3a3c15136",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E106",
+      "true_cause_code": "FAN_BLOCKED",
+      "confusable_causes": [
+        "FAN_MOTOR",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-8955cecd6cb4",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E106",
+      "true_cause_code": "FAN_MOTOR",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-174907dc144d",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E106",
+      "true_cause_code": "FAN_DRIVER",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_MOTOR"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-31fd32053300",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_FAULT",
+      "confusable_causes": [
+        "SENSOR_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-861d4f131ab8",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_WIRING",
+      "confusable_causes": [
+        "SENSOR_FAULT"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-f2134c84d08a",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E101",
+      "true_cause_code": "POWER_SUPPLY",
+      "confusable_causes": [
+        "POWER_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-6031af7800bf",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E101",
+      "true_cause_code": "POWER_WIRING",
+      "confusable_causes": [
+        "POWER_SUPPLY"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-3d7bf31f8315",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_CONFIG",
+      "confusable_causes": [
+        "NETWORK_MODULE"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-230f7103ff7b",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_MODULE",
+      "confusable_causes": [
+        "NETWORK_CONFIG"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-f6f655052116",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E105",
+      "true_cause_code": "COMPRESSOR_FAULT",
+      "confusable_causes": [
+        "CONDENSER_BLOCKED",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-474be4bbd871",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E105",
+      "true_cause_code": "CONDENSER_BLOCKED",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-33dee894ef50",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E105",
+      "true_cause_code": "REFRIGERANT_LEAK",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "CONDENSER_BLOCKED"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-4299e631110c",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E106",
+      "true_cause_code": "FAN_BLOCKED",
+      "confusable_causes": [
+        "FAN_MOTOR",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-18d1ab940661",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E106",
+      "true_cause_code": "FAN_MOTOR",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-56e269017acd",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E106",
+      "true_cause_code": "FAN_DRIVER",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_MOTOR"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-fedfe4eb8855",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_FAULT",
+      "confusable_causes": [
+        "SENSOR_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-22ea9cf18d27",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_WIRING",
+      "confusable_causes": [
+        "SENSOR_FAULT"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-fd386e50656c",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E101",
+      "true_cause_code": "POWER_SUPPLY",
+      "confusable_causes": [
+        "POWER_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-c9b56f8bf838",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E101",
+      "true_cause_code": "POWER_WIRING",
+      "confusable_causes": [
+        "POWER_SUPPLY"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-18b1cdf06e47",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_CONFIG",
+      "confusable_causes": [
+        "NETWORK_MODULE"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-6e187772c694",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_MODULE",
+      "confusable_causes": [
+        "NETWORK_CONFIG"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-240a723bb27d",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E105",
+      "true_cause_code": "COMPRESSOR_FAULT",
+      "confusable_causes": [
+        "CONDENSER_BLOCKED",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-2cf1e8943cb2",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E105",
+      "true_cause_code": "CONDENSER_BLOCKED",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-975e370329eb",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E105",
+      "true_cause_code": "REFRIGERANT_LEAK",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "CONDENSER_BLOCKED"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-d5e849642f73",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E106",
+      "true_cause_code": "FAN_BLOCKED",
+      "confusable_causes": [
+        "FAN_MOTOR",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-8a02285df0b2",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E106",
+      "true_cause_code": "FAN_MOTOR",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-4804a3393f6c",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E106",
+      "true_cause_code": "FAN_DRIVER",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_MOTOR"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-12c238bc3fee",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_FAULT",
+      "confusable_causes": [
+        "SENSOR_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-898709b30adc",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_WIRING",
+      "confusable_causes": [
+        "SENSOR_FAULT"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-5335245e6722",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E101",
+      "true_cause_code": "POWER_SUPPLY",
+      "confusable_causes": [
+        "POWER_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-4d60d72d7e08",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E101",
+      "true_cause_code": "POWER_WIRING",
+      "confusable_causes": [
+        "POWER_SUPPLY"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-43941582fa11",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_CONFIG",
+      "confusable_causes": [
+        "NETWORK_MODULE"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-0df53939c59e",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_MODULE",
+      "confusable_causes": [
+        "NETWORK_CONFIG"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-6774702b3b1a",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E105",
+      "true_cause_code": "COMPRESSOR_FAULT",
+      "confusable_causes": [
+        "CONDENSER_BLOCKED",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-a97e26403062",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E105",
+      "true_cause_code": "CONDENSER_BLOCKED",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-4a139b1b693c",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E105",
+      "true_cause_code": "REFRIGERANT_LEAK",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "CONDENSER_BLOCKED"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-61860bd91820",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E106",
+      "true_cause_code": "FAN_BLOCKED",
+      "confusable_causes": [
+        "FAN_MOTOR",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-9b960aad6380",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E106",
+      "true_cause_code": "FAN_MOTOR",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-113b45666b47",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E106",
+      "true_cause_code": "FAN_DRIVER",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_MOTOR"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-e926202a7acb",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_FAULT",
+      "confusable_causes": [
+        "SENSOR_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-22cc953198a3",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_WIRING",
+      "confusable_causes": [
+        "SENSOR_FAULT"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-cf410436a50d",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E101",
+      "true_cause_code": "POWER_SUPPLY",
+      "confusable_causes": [
+        "POWER_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "整机无反应，面板没有任何显示，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "整机无反应，面板没有任何显示，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯不亮",
+            "CHECK_BREAKER": "开关正常但设备仍无电",
+            "PHOTO_POWER_CORD": "插接牢固且线缆完好"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-872e7c557f06",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E101",
+      "true_cause_code": "POWER_WIRING",
+      "confusable_causes": [
+        "POWER_SUPPLY"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备在轻微移动后会突然掉电，报故障码 E101。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备在轻微移动后会突然掉电，报故障码 E101。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_POWER_LED": "指示灯正常点亮",
+            "CHECK_BREAKER": "开关跳闸且复位后恢复",
+            "PHOTO_POWER_CORD": "插头松动或线缆破损"
+          },
+          "expected_probe_codes": [
+            "ASK_POWER_LED",
+            "CHECK_BREAKER",
+            "PHOTO_POWER_CORD"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-74cc1c543ca0",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_CONFIG",
+      "confusable_causes": [
+        "NETWORK_MODULE"
+      ],
+      "risk_flags": [],
+      "holdout": true,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "App 无法完成设备绑定，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "App 无法完成设备绑定，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 能发现设备但无法连上云端",
+            "CHECK_REBIND": "重新配网后恢复正常",
+            "PHOTO_NETWORK_MODULE": "模块与接线完好"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-ce9bea72bd51",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E103",
+      "true_cause_code": "NETWORK_MODULE",
+      "confusable_causes": [
+        "NETWORK_CONFIG"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备上班时间频繁离线，报故障码 E103。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备上班时间频繁离线，报故障码 E103。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_NETWORK_STATUS": "App 完全无法发现设备",
+            "CHECK_REBIND": "重新配网仍然失败",
+            "PHOTO_NETWORK_MODULE": "天线脱落或模块明显损坏"
+          },
+          "expected_probe_codes": [
+            "ASK_NETWORK_STATUS",
+            "CHECK_REBIND",
+            "PHOTO_NETWORK_MODULE"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-eb506a5479ac",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E105",
+      "true_cause_code": "COMPRESSOR_FAULT",
+      "confusable_causes": [
+        "CONDENSER_BLOCKED",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间一直不凉，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间一直不凉，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风且压缩机完全无声",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动即停或过流保护"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-d1fbaeebc9f6",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E105",
+      "true_cause_code": "CONDENSER_BLOCKED",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "REFRIGERANT_LEAK"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间降温很慢，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间降温很慢，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "制冷间歇且外机吹热风",
+            "PHOTO_PIPE_FROST": "管路洁净无结霜",
+            "CHECK_CONDENSER_CLEAN": "清理后制冷明显改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-e78dd5f84b95",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E105",
+      "true_cause_code": "REFRIGERANT_LEAK",
+      "confusable_causes": [
+        "COMPRESSOR_FAULT",
+        "CONDENSER_BLOCKED"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "房间温度一直降不下来，管路接口有油渍，报故障码 E105。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_COOLING": "无冷风但压缩机持续运转",
+            "PHOTO_PIPE_FROST": "接头结霜或有油渍",
+            "CHECK_CONDENSER_CLEAN": "清理后无改善",
+            "CHECK_COMPRESSOR_START": "启动后持续平稳运转"
+          },
+          "expected_probe_codes": [
+            "ASK_COOLING",
+            "PHOTO_PIPE_FROST",
+            "CHECK_CONDENSER_CLEAN",
+            "CHECK_COMPRESSOR_START"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-59e7696145df",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E106",
+      "true_cause_code": "FAN_BLOCKED",
+      "confusable_causes": [
+        "FAN_MOTOR",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运行声音不寻常，出风很弱，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运行声音不寻常，出风很弱，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "有摩擦或刮擦声",
+            "PHOTO_BLADE": "叶片有异物或变形",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-753ef6db6af7",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E106",
+      "true_cause_code": "FAN_MOTOR",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_DRIVER"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "设备运转声比平时大，出风一般，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "设备运转声比平时大，出风一般，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "转动正常但吹出热风",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片有明显卡滞或阻力"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-e9123dd6b78b",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E106",
+      "true_cause_code": "FAN_DRIVER",
+      "confusable_causes": [
+        "FAN_BLOCKED",
+        "FAN_MOTOR"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "出风口气流很弱，几乎感觉不到，报故障码 E106。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "出风口气流很弱，几乎感觉不到，报故障码 E106。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SOUND": "完全无声",
+            "PHOTO_BLADE": "叶片洁净且可自由转动",
+            "CHECK_ROTATION": "拨动叶片旋转顺畅"
+          },
+          "expected_probe_codes": [
+            "ASK_SOUND",
+            "PHOTO_BLADE",
+            "CHECK_ROTATION"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-eff1381116f7",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_FAULT",
+      "confusable_causes": [
+        "SENSOR_WIRING"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板显示的温度与实际不符，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板显示的温度与实际不符，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值乱跳或显示 --",
+            "PHOTO_SENSOR": "接线完好无腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障消失"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    },
+    {
+      "id": "real-996d5b4003da",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E108",
+      "true_cause_code": "SENSOR_WIRING",
+      "confusable_causes": [
+        "SENSOR_FAULT"
+      ],
+      "risk_flags": [],
+      "holdout": false,
+      "variants": [
+        {
+          "id": "text_only",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_photo",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        },
+        {
+          "id": "with_probe_result",
+          "symptom": "面板温度数值时不时跳动，报故障码 E108。",
+          "evidence": [
+            {
+              "source_type": "customer",
+              "polarity": "support",
+              "quote": "面板温度数值时不时跳动，报故障码 E108。"
+            }
+          ],
+          "probe_answers": {
+            "ASK_SENSOR_DISPLAY": "数值稳定但故障灯常亮",
+            "PHOTO_SENSOR": "接线脱落或受潮腐蚀",
+            "CHECK_SENSOR_SWAP": "更换后故障依旧"
+          },
+          "expected_probe_codes": [
+            "ASK_SENSOR_DISPLAY",
+            "PHOTO_SENSOR",
+            "CHECK_SENSOR_SWAP"
+          ],
+          "expected_escalation": false,
+          "expected_evidence_manual_ids": []
+        }
+      ]
+    }
+  ]
+}

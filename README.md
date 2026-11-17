@@ -30,7 +30,7 @@
 | R11 | Next.js 诊断工作台 |
 | R12 | 1 场景 3 变体与逐步演示脚本 |
 | R13 | 零依赖本地启动 + Docker Compose（PostgreSQL/pgvector、Redis、MinIO、API、Web） |
-| R14 | 自动化测试（覆盖率 ≥80%）与端到端冒烟 |
+| R14 | 自动化测试（CI 覆盖率门禁 ≥80%）与端到端冒烟 |
 | R15 | 配件目录：型号/配件号/库存/硬件区间与 equivalent/replacement/requires_adapter/incompatible 兼容性 |
 | R16 | 维修方案：自处理/寄修/上门/换件的候选与推荐，校验配件兼容性但不自动下单 |
 | R17 | 提交审批、approve/reject、幂等工单（同一幂等键只建一张单） |
@@ -46,7 +46,7 @@
 
 ## 技术栈
 
-- 后端：Python 3.12、FastAPI、SQLAlchemy 2、Pydantic 2、Alembic、PyJWT
+- 后端：Python 3.12+（CI 3.12，本机验证 3.13）、FastAPI、SQLAlchemy 2、Pydantic 2、Alembic、PyJWT
 - 前端：Next.js 14（App Router，`output: "standalone"`）、React 18、TypeScript strict、Tailwind CSS
 - 数据：默认 SQLite（向量以 JSON 存 `document_chunks.embedding`，进程内余弦检索）；Compose 下为 PostgreSQL + pgvector
 - 检索：默认 `VECTOR_BACKEND=json`（JSON 余弦）；PostgreSQL 下可切换 `VECTOR_BACKEND=pgvector`，不可用即回退
@@ -60,7 +60,7 @@
 
 ```
 core/ai            LLM / Embedding / OCR Provider（Ollama 默认，Mock 回退）
-core/db            Base、engine、Session、12 张 ORM 表
+core/db            Base、engine、Session、19 张 ORM 表
 core/rag           切片、向量索引（JSON 余弦 / 可选 pgvector）、版本过滤检索、重排、引用
 core/multimodal    上传校验、对象存储、OCR 与结构化提取
 core/workflow      V1.2 确定性诊断状态机；可选 LangGraph 编排适配层（默认 native）
@@ -77,7 +77,7 @@ core/tasks         任务模型与状态存储（Redis + 进程内回退）、�
 services/api       FastAPI（自动发现 routes，前缀 /api/v1）
 services/worker    Celery 应用与异步任务（手册索引、消融运行、案例推进）
 apps/web           Next.js 14 诊断工作台
-data/manuals       20 份演示手册（5 设备 × 4 份）
+data/manuals       36 份演示手册（9 设备 × 4 份）
 data/scenarios     E106 演示场景 3 变体；`v1/scenarios.json` 为 80 场景 × 3 变体的合成场景集
 data/parts         模拟配件目录与兼容关系（5 型号 × 4 主件 + R2 替代件）
 data/outcomes      20 条模拟维修结果（10 一致 / 10 差异）
@@ -90,7 +90,7 @@ docs               架构、接口、状态机、诊断流程、维修闭环、�
 
 ## 本地快速开始（零外部依赖）
 
-前置：Python 3.12、Node 20（只跑后端时不需要 Node）。
+前置：Python 3.12+（本机验证 3.13）、Node 20（只跑后端时不需要 Node）。
 
 ```bash
 # 1. 依赖
@@ -102,7 +102,7 @@ pip install -r requirements.txt
 python scripts/init_db.py
 python scripts/init_db.py --reset # 需要清空时
 
-# 3. 种子数据：4 账号 / 5 设备 / 20 手册+索引 / 1 演示案例
+# 3. 种子数据：4 账号 / 9 设备 / 36 手册+索引 / 1 演示案例
 python scripts/seed_demo.py
 
 # 4. 维修闭环模拟数据：5 型号配件与兼容关系 + 20 条模拟维修结果
@@ -140,8 +140,8 @@ python scripts/check_llm.py        # 校验模型存在并试跑一次
 
 离线或没有模型时，在 `.env` 中设置 `AI_PROVIDER=mock` 即可得到确定性输出
 （型号识别、故障码候选、Embedding、OCR 全部由 Mock 提供），演示与测试均不依赖网络。
-注意：Mock 只识别 `KNOWN_MODELS` 中的型号（`AuroraHome AC-Pro 1200`、`AC-Pro 900`、`WH-3000`），
-其他设备仍可建档与索引，但受理时会标记人工确认型号。
+注意：Mock 只识别 `KNOWN_MODELS` 中的 9 个演示型号（含 `AuroraHome AC-Mini 600`、`NovaDesk PX-220/PX-450`、
+`VentoCool FZ-30`），其他设备仍可建档与索引，但受理时会标记人工确认型号。
 真实 OCR（`paddle` / `rapid` / `tesseract`）是独立开关，见下文「真实 OCR 与 PDF 文本层」。
 
 环境变量完整清单见 `.env.example`。

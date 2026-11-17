@@ -4,6 +4,7 @@
 - 要求：有效记录 ≥ 60（对齐场景集 60–80 的契约），否则退出码 1。
 - 输出：`data/scenarios/real-v1/scenarios.json`（dataset_version=real-v1），写出后用
   `core.simulator.loader.load_scenarios` 自校验。
+- 检查观察值按真实根因回填：优先选 `supports` 命中该根因的观察；否则选不反驳该根因、且尽量反驳混淆根因的观察，避免生成自相矛盾的场景。
 
 用法：
   python scripts/build_scenarios_from_real.py --file <real.jsonl> --out data/scenarios/real-v1/scenarios.json
@@ -58,10 +59,27 @@ def _eligible_probes(error_code: str) -> list:
     return [p for p in probes if p.risk_level != "high" and not p.required_tools]
 
 
-def _first_observation(spec) -> str | None:
-    for key in spec.expected_outcomes:
-        return str(key)
-    return None
+def _observation_for(spec, cause_code: str, confusables: list[str]) -> str | None:
+    """挑选与真实根因不冲突的观察值。
+
+    优先级：支持真实根因 → 少支持其他根因 → 多反驳混淆根因。
+    所有候选都不能反驳真实根因，否则会把正确结论反向证伪；无可用观察时跳过该检查。
+    """
+    best_key: str | None = None
+    best_rank: tuple[int, int, int] | None = None
+    for key, effect in spec.expected_outcomes.items():
+        supports = set(effect.get("supports", []))
+        refutes = set(effect.get("refutes", []))
+        if cause_code in refutes:
+            continue
+        rank = (
+            1 if cause_code in supports else 0,
+            -len(supports - {cause_code}),
+            len(refutes & set(confusables)),
+        )
+        if best_rank is None or rank > best_rank:
+            best_key, best_rank = str(key), rank
+    return best_key
 
 
 def _holdout_ids(ids: list[str], share: float = HOLDOUT_SHARE) -> set[str]:
@@ -98,11 +116,12 @@ def build_scenarios(records: list[dict]) -> tuple[list[dict], list[dict]]:
         probes = _eligible_probes(error_code)
         answers: dict[str, str] = {}
         expected: list[str] = []
-        for spec in probes[:3]:
-            observed = _first_observation(spec)
-            if observed:
-                answers[spec.code] = observed
-                expected.append(spec.code)
+        for spec in probes:
+            observed = _observation_for(spec, cause, others[:2])
+            if observed is None:
+                continue
+            answers[spec.code] = observed
+            expected.append(spec.code)
 
         variants = []
         for variant_id in VARIANT_IDS_LOCAL:

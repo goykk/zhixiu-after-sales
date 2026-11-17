@@ -43,6 +43,9 @@ METRIC_KEYS = {
     "escalation_variant_count",
     "top1_rate",
     "top3_rate",
+    "diagnosable_variant_count",
+    "top1_rate_diagnosable",
+    "top3_rate_diagnosable",
     "avg_steps",
     "early_probe_rate",
     "unnecessary_parts_rate",
@@ -584,6 +587,10 @@ def test_aggregate_computes_each_metric_from_scenario_truth():
     assert metrics["escalation_variant_count"] == 1
     assert metrics["top1_rate"] == pytest.approx(2 / 3)
     assert metrics["top3_rate"] == pytest.approx(2 / 3)
+    # 3 个变体中仅 s1 声明 expected_escalation=true，可诊断口径剔除后 2 个全命中
+    assert metrics["diagnosable_variant_count"] == 2
+    assert metrics["top1_rate_diagnosable"] == pytest.approx(0.5)
+    assert metrics["top3_rate_diagnosable"] == pytest.approx(0.5)
     assert metrics["avg_steps"] == pytest.approx(1.0)
     # 两个变体声明了期望检查，只有 s1 的 PHOTO_BLADE 落在前 3 步
     assert metrics["early_probe_rate"] == pytest.approx(0.5)
@@ -609,6 +616,7 @@ def test_aggregate_handles_empty_input_and_missing_truth():
         "failed_count",
         "safety_variant_count",
         "escalation_variant_count",
+        "diagnosable_variant_count",
     }:
         assert empty[key] == 0.0
 

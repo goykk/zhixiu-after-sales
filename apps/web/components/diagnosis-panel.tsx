@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { EvidenceForm } from "@/components/evidence-form";
-import { Badge, Button, Card, inputClass, type BadgeTone } from "@/components/ui";
+import { Badge, Button, Card, ProgressBar, inputClass, type BadgeTone } from "@/components/ui";
 import type {
   CaseDetail,
   DiagnosisResult,
@@ -70,21 +70,30 @@ function EvidenceLedger({ evidence }: { evidence: EvidenceItem[] }) {
     <ul className="space-y-2">
       {evidence.map((item) => {
         const polarity = POLARITY_META[item.polarity] ?? { label: item.polarity, tone: "neutral" as BadgeTone };
+        const rail =
+          item.polarity === "support"
+            ? "border-l-emerald-500"
+            : item.polarity === "refute"
+              ? "border-l-rose-500"
+              : "border-l-slate-300";
         return (
-          <li key={item.id} className="rounded-md border border-slate-200 px-3 py-2">
+          <li
+            key={item.id}
+            className={`rounded-lg border border-slate-200 border-l-4 bg-white px-3.5 py-3 ${rail}`}
+          >
             <div className="flex flex-wrap items-center gap-2">
-              <Badge tone="blue">{SOURCE_LABELS[item.source_type] ?? item.source_type}</Badge>
+              <Badge tone="neutral">{SOURCE_LABELS[item.source_type] ?? item.source_type}</Badge>
               <Badge tone={polarity.tone}>{polarity.label}</Badge>
-              <span className="text-xs text-slate-500">
+              <span className="text-[10px] text-slate-500">
                 第 {item.page} 页 · 相关度 {item.relevance_score.toFixed(2)}
               </span>
               {item.chunk_id && (
-                <span className="text-xs text-slate-400">片段 {item.chunk_id.slice(0, 8)}</span>
+                <span className="text-[10px] text-slate-400">片段 {item.chunk_id.slice(0, 8)}</span>
               )}
             </div>
-            <p className="mt-1 whitespace-pre-wrap text-sm text-slate-800">{item.quote}</p>
+            <p className="mt-1.5 whitespace-pre-wrap text-sm leading-6 text-slate-800">{item.quote}</p>
             {item.source_ref && (
-              <p className="mt-1 text-xs text-slate-400">来源：{item.source_ref}</p>
+              <p className="mt-1 text-[10px] text-slate-400">来源：{item.source_ref}</p>
             )}
 
           </li>
@@ -106,39 +115,62 @@ function HypothesisList({
   }
   return (
     <ul className="space-y-3">
-      {hypotheses.map((item) => {
+      {hypotheses.map((item, index) => {
         const status = HYPOTHESIS_STATUS[item.status] ?? {
           label: item.status,
           tone: "neutral" as BadgeTone,
         };
+        const rail =
+          item.status === "supported"
+            ? "border-l-emerald-500"
+            : item.status === "rejected"
+              ? "border-l-slate-300"
+              : "border-l-amber-400";
         return (
-          <li key={item.id} className="rounded-md border border-slate-200 px-3 py-3">
+          <li
+            key={item.id}
+            className={`rounded-lg border border-slate-200 border-l-4 bg-white px-3.5 py-3 ${rail}`}
+          >
             <div className="flex flex-wrap items-center gap-2">
-              <span className="font-medium text-slate-900">{item.label}</span>
-              <Badge tone="purple">{item.cause_code}</Badge>
+              <span className="grid h-6 w-6 place-items-center rounded bg-slate-100 text-[11px] font-bold text-slate-600">
+                {index + 1}
+              </span>
+              <span className="font-semibold text-slate-950">{item.label}</span>
+              <Badge tone="neutral">{item.cause_code}</Badge>
               <Badge tone={status.tone}>{status.label}</Badge>
-              <Badge tone="orange">
+              <Badge tone={item.confidence_level === "high" ? "green" : "orange"}>
                 {CONFIDENCE_LABELS[item.confidence_level] ?? item.confidence_level}
               </Badge>
-              <span className="text-xs text-slate-500">证据版本 v{item.evidence_version}</span>
+              <span className="text-[10px] text-slate-500">证据版本 v{item.evidence_version}</span>
             </div>
-            <div className="mt-2 grid gap-1 text-xs text-slate-600">
-              <span>
-                支持证据：{item.support_evidence_ids.length} 条
-                {item.support_evidence_ids.length > 0 &&
-                  `（${item.support_evidence_ids
-                    .map((id) => evidenceById.get(id)?.quote ?? id)
-                    .join("；")}）`}
-              </span>
-              <span>
-                反对证据：{item.refute_evidence_ids.length} 条
-                {item.refute_evidence_ids.length > 0 &&
-                  `（${item.refute_evidence_ids
-                    .map((id) => evidenceById.get(id)?.quote ?? id)
-                    .join("；")}）`}
+            <div className="mt-2.5 flex items-center gap-2">
+              <ProgressBar
+                value={Math.max(0, Math.min(1, item.confidence_score))}
+                tone={item.confidence_level === "high" ? "green" : "amber"}
+              />
+              <span className="shrink-0 font-mono text-[10px] text-slate-500">
+                {item.confidence_score.toFixed(2)}
               </span>
             </div>
-            {item.rationale && <p className="mt-2 text-sm text-slate-700">{item.rationale}</p>}
+            <div className="mt-2 flex flex-wrap gap-1.5 text-[10px]">
+              <span className="rounded bg-emerald-50 px-1.5 py-0.5 font-medium text-emerald-700">
+                支持 {item.support_evidence_ids.length}
+              </span>
+              <span className="rounded bg-rose-50 px-1.5 py-0.5 font-medium text-rose-700">
+                反对 {item.refute_evidence_ids.length}
+              </span>
+            </div>
+            {item.support_evidence_ids.length > 0 && (
+              <p className="mt-1.5 line-clamp-2 text-[10px] leading-4 text-slate-500">
+                支持证据：{item.support_evidence_ids.map((id) => evidenceById.get(id)?.quote ?? id).join("；")}
+              </p>
+            )}
+            {item.refute_evidence_ids.length > 0 && (
+              <p className="mt-1 line-clamp-2 text-[10px] leading-4 text-slate-500">
+                反对证据：{item.refute_evidence_ids.map((id) => evidenceById.get(id)?.quote ?? id).join("；")}
+              </p>
+            )}
+            {item.rationale && <p className="mt-2 text-xs leading-5 text-slate-700">{item.rationale}</p>}
           </li>
         );
       })}
@@ -161,16 +193,19 @@ function ProbeCardView({
   const rationale = card.rationale;
 
   return (
-    <div className="space-y-3 rounded-md border border-slate-200 px-4 py-4">
+    <div className="space-y-3 rounded-xl border-2 border-teal-200 bg-teal-50/30 px-4 py-4">
       <div className="flex flex-wrap items-center gap-2">
-        <Badge tone="blue">{PROBE_TYPE_LABELS[card.probe_type] ?? card.probe_type}</Badge>
-        <Badge tone="purple">{card.code}</Badge>
-        <span className="text-xs text-slate-500">
+        <span className="rounded bg-teal-700 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">
+          Next probe
+        </span>
+        <Badge tone="neutral">{PROBE_TYPE_LABELS[card.probe_type] ?? card.probe_type}</Badge>
+        <Badge tone="teal">{card.code}</Badge>
+        <span className="text-[10px] text-slate-500">
           成本 {LEVEL_LABELS[card.cost_level] ?? card.cost_level} · 风险{" "}
           {LEVEL_LABELS[card.risk_level] ?? card.risk_level} · 评分 {card.score.toFixed(2)}
         </span>
       </div>
-      <p className="text-sm font-medium text-slate-900">{card.question}</p>
+      <p className="text-base font-semibold leading-6 text-slate-950">{card.question}</p>
       <p className="text-sm text-slate-700">目标根因：{formatList(card.target_labels)}</p>
       <div className="text-sm text-slate-700">
         预期结果：
@@ -296,50 +331,76 @@ function ConclusionSection({
     const rootCause = result.root_cause;
     return (
       <div className="space-y-3">
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-sm text-slate-600">根因</span>
-          <span className="font-medium text-slate-900">{rootCause?.label ?? "未确定"}</span>
-          {rootCause && <Badge tone="purple">{rootCause.cause_code}</Badge>}
+        <div className="rounded-lg border border-emerald-200 bg-emerald-50/50 p-4">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-emerald-700">
+              Root cause
+            </span>
+            <Badge tone="green">已形成结论</Badge>
+            <Badge tone="neutral">{result.case_status}</Badge>
+          </div>
+          <p className="mt-2 text-xl font-semibold tracking-tight text-slate-950">
+            {rootCause?.label ?? "未确定"}
+          </p>
+          <div className="mt-2 flex flex-wrap items-center gap-2">
+            {rootCause && <Badge tone="teal">{rootCause.cause_code}</Badge>}
+            {rootCause && (
+              <Badge tone={rootCause.confidence_level === "high" ? "green" : "orange"}>
+                {CONFIDENCE_LABELS[rootCause.confidence_level] ?? rootCause.confidence_level}
+              </Badge>
+            )}
+            {rootCause && (
+              <span className="font-mono text-[10px] text-slate-500">
+                score {rootCause.confidence_score.toFixed(2)}
+              </span>
+            )}
+          </div>
           {rootCause && (
-            <Badge tone="orange">
-              {CONFIDENCE_LABELS[rootCause.confidence_level] ?? rootCause.confidence_level}
-            </Badge>
+            <div className="mt-3">
+              <ProgressBar value={rootCause.confidence_score} tone="green" />
+            </div>
           )}
-          <Badge tone="green">{result.case_status}</Badge>
         </div>
-        {result.rationale && <p className="text-sm text-slate-700">{result.rationale}</p>}
-        <div className="text-sm text-slate-700">
-          证据链：
+        {result.rationale && <p className="text-sm leading-6 text-slate-700">{result.rationale}</p>}
+        <div className="rounded-lg border border-slate-200 bg-white p-3.5">
+          <p className="data-label mb-2">证据链</p>
           {result.evidence_chain.length === 0 ? (
-            <span className="text-slate-500">无</span>
+            <p className="text-xs text-slate-500">无</p>
           ) : (
-            <ul className="mt-1 space-y-1 text-xs text-slate-600">
+            <ul className="space-y-2 text-xs leading-5 text-slate-600">
               {result.evidence_chain.map((item) => (
-                <li key={item.id}>
-                  [{SOURCE_LABELS[item.source_type] ?? item.source_type}] {item.quote}
+                <li key={item.id} className="flex gap-2">
+                  <span className="shrink-0 font-medium text-slate-800">
+                    [{SOURCE_LABELS[item.source_type] ?? item.source_type}]
+                  </span>
+                  <span>{item.quote}</span>
                 </li>
               ))}
             </ul>
           )}
         </div>
         {result.unresolved.length > 0 && (
-          <p className="text-sm text-slate-500">未排除根因：{formatList(result.unresolved)}</p>
+          <p className="text-xs text-slate-500">未排除根因：{formatList(result.unresolved)}</p>
         )}
       </div>
     );
   }
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-3 rounded-lg border border-amber-200 bg-amber-50/40 p-4">
       {summary?.root_cause ? (
-        <p className="text-sm text-slate-700">
+        <p className="text-sm leading-6 text-slate-700">
           当前最强候选：
-          <span className="font-medium text-slate-900">{summary.root_cause.label}</span>
-          <Badge tone="purple">{summary.root_cause.cause_code}</Badge>
-          <Badge tone="orange">
-            {CONFIDENCE_LABELS[summary.root_cause.confidence_level] ??
-              summary.root_cause.confidence_level}
-          </Badge>
+          <span className="ml-1 font-semibold text-slate-950">{summary.root_cause.label}</span>
+          <span className="ml-2 inline-flex align-middle">
+            <Badge tone="teal">{summary.root_cause.cause_code}</Badge>
+          </span>
+          <span className="ml-1 inline-flex align-middle">
+            <Badge tone="orange">
+              {CONFIDENCE_LABELS[summary.root_cause.confidence_level] ??
+                summary.root_cause.confidence_level}
+            </Badge>
+          </span>
         </p>
       ) : (
         <p className="text-sm text-slate-500">尚未形成可支持的结论。</p>

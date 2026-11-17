@@ -7,7 +7,9 @@ from dataclasses import dataclass
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from core.ai.base import EmbeddingProvider
 from core.ai.factory import get_embedder
+from core.ai.mock import MockEmbedder
 from core.db.models import DocumentChunk, Manual
 from core.devices import find_device_by_model
 from core.rag.rerank import rerank
@@ -29,10 +31,13 @@ class EvidenceItem:
 
 
 class VersionAwareRetriever:
-    def __init__(self, db: Session, embedder=None, store=None):
+    def __init__(self, db: Session, embedder: EmbeddingProvider | None = None, store=None):
         self.db = db
         self.embedder = embedder or get_embedder()
         self.store = store or get_vector_store(db)
+        # Mock 嵌入是确定性哈希，不是语义向量：余弦普遍低于真实模型阈值，
+        # 离线演示时取消阈值过滤，交给关键词重排决定顺序。
+        self.threshold = 0.0 if isinstance(self.embedder, MockEmbedder) else settings.relevance_threshold
 
     def retrieve(
         self,
@@ -57,7 +62,7 @@ class VersionAwareRetriever:
             return []
         chunks = self._load_chunks([chunk_id for chunk_id, _ in candidates])
         manuals = self._load_manuals({chunk.manual_id for chunk in chunks.values()})
-        threshold = settings.relevance_threshold
+        threshold = self.threshold
         items: list[EvidenceItem] = []
         for chunk_id, score in candidates:
             chunk = chunks.get(chunk_id)

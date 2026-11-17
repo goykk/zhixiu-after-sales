@@ -170,6 +170,28 @@ def test_version_aware_retriever_uses_configured_vector_store(db, seed_base, mon
     assert [item.chunk_id for item in items] == [chunk.id]
 
 
+def test_model_filter_accepts_model_or_brand_qualified_name():
+    from core.rag.vector_store import _matches
+
+    meta = {"brand": "NovaDesk", "model": "PX-450", "version": "v1.2"}
+
+    assert _matches(meta, {"model": "px-450"})
+    assert _matches(meta, {"model": "novadesk px-450"})
+    assert not _matches(meta, {"model": "px-220"})
+
+
+def test_mock_embedder_retrieval_returns_chunks_without_semantic_threshold(db, seed_base):
+    from core.ai.mock import MockEmbedder
+    from core.rag.retriever import VersionAwareRetriever
+
+    retriever = VersionAwareRetriever(db, embedder=MockEmbedder(settings.embedding_dim))
+
+    items = retriever.retrieve("风扇异响", model="AC-Pro 1200", top_k=3)
+
+    assert items, "Mock 嵌入是哈希向量，离线演示不应被语义阈值挡掉"
+    assert all(item.model == "AC-Pro 1200" for item in items)
+
+
 class _RecordingBind:
     def __init__(self, dialect_name: str, log: list[str]) -> None:
         self.dialect = SimpleNamespace(name=dialect_name)

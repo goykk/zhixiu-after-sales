@@ -50,6 +50,8 @@ def render_markdown(report: dict[str, Any]) -> str:
     metrics_by_strategy = report.get("metrics") or {}
     lines.extend(_render_metrics_table(metrics_by_strategy))
     lines.append("")
+    lines.extend(_render_diagnosable(metrics_by_strategy))
+    lines.append("")
     lines.extend(_render_gate(report.get("gate") or {}, passed))
     lines.append("")
     lines.extend(_render_failed_cases(report.get("failed_cases") or []))
@@ -74,6 +76,37 @@ def _render_metrics_table(metrics_by_strategy: dict[str, Any]) -> list[str]:
         metrics = metrics_by_strategy[strategy] or {}
         cells = [_format_metric(metrics.get(key), kind) for key, _, kind in METRIC_COLUMNS]
         lines.append(f"| {strategy} | " + " | ".join(cells) + " |")
+    return lines
+
+
+def _render_diagnosable(metrics_by_strategy: dict[str, Any]) -> list[str]:
+    lines = [
+        "## 诊断口径",
+        "",
+        "| 策略 | 计分变体 | 可诊断变体 | 应转人工变体 | 可诊断 Top-1 | 可诊断 Top-3 |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for strategy, metrics in metrics_by_strategy.items():
+        metrics = metrics or {}
+        lines.append(
+            "| "
+            + " | ".join(
+                [
+                    str(strategy),
+                    _cell(metrics.get("variant_count")),
+                    _cell(metrics.get("diagnosable_variant_count")),
+                    _cell(metrics.get("escalation_variant_count")),
+                    _format_metric(metrics.get("top1_rate_diagnosable"), "rate"),
+                    _format_metric(metrics.get("top3_rate_diagnosable"), "rate"),
+                ]
+            )
+            + " |"
+        )
+    lines.append("")
+    lines.append(
+        "应转人工变体按契约不产出根因，仍计入上表 Top-1/Top-3 分母（保守口径）；"
+        "本表剔除后单列，仅用于口径说明，不参与门禁。"
+    )
     return lines
 
 

@@ -4,8 +4,39 @@
 
 :root {
   color-scheme: light;
+  --canvas: #f3f5f2;
+  --ink: #0f1b1f;
+  --accent: #0f766e;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 antialiased;
+  @apply bg-[#f3f5f2] text-slate-900 antialiased;
+  background-image: radial-gradient(rgba(15, 27, 31, 0.055) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+::selection {
+  background: rgba(15, 118, 110, 0.18);
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-teal-700;
+  }
+
+  .data-label {
+    @apply text-[11px] font-medium uppercase tracking-[0.14em] text-slate-500;
+  }
+
+  .hairline {
+    @apply border-slate-200/80;
+  }
+
+  .surface {
+    @apply rounded-xl border border-slate-200/80 bg-white shadow-[0_1px_2px_rgba(15,27,31,0.04),0_12px_28px_-24px_rgba(15,27,31,0.28)];
+  }
 }
