@@ -1,0 +1,44 @@
+name: acceptance
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    name: Backend pytest + acceptance
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt -r requirements-dev.txt
+      - name: Run pytest
+        run: python -m pytest -q
+      - name: Run one-command acceptance (skip heavy)
+        env:
+          AI_PROVIDER: mock
+          TASK_BACKEND: sync
+          OTEL_ENABLED: "false"
+        run: python scripts/acceptance.py --skip-heavy --json
+
+  frontend:
+    name: Frontend typecheck + build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install web dependencies
+        working-directory: apps/web
+        run: npm ci
+      - name: TypeScript check
+        working-directory: apps/web
+        run: npx tsc --noEmit
+      - name: Build Next.js
+        working-directory: apps/web
+        run: npm run build
