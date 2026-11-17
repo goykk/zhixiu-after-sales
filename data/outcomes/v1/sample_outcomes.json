@@ -1,0 +1,207 @@
+{
+  "dataset_version": "v1",
+  "source": "simulated",
+  "note": "20 条模拟维修结果：第 1–10 条与故障码对应诊断一致，第 11–20 条为差异案例。映射见 docs/repair-closure.md。",
+  "outcomes": [
+    {
+      "case_symptom": "制冷时风扇区域有摩擦异响，出风很小，面板显示 E106。",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E106",
+      "actual_cause_code": "FAN_BLOCKED",
+      "action": "replace_part",
+      "parts_replaced": ["FAN-BLADE-KIT"],
+      "resolved": true,
+      "note": "断电后清除卡阻异物，扇叶轻微变形，更换同型号扇叶组件后风量恢复。"
+    },
+    {
+      "case_symptom": "出风量下降且风机有刮擦声。",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E106",
+      "actual_cause_code": "FAN_BLOCKED",
+      "action": "self_service",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "按手册清理扇叶缠绕物后转速恢复正常。"
+    },
+    {
+      "case_symptom": "面板报 E101，设备无法上电。",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E101",
+      "actual_cause_code": "POWER_SUPPLY",
+      "action": "replace_part",
+      "parts_replaced": ["POWER-SUPPLY-UNIT"],
+      "resolved": true,
+      "note": "电源模块输出异常，更换电源模块后恢复供电。"
+    },
+    {
+      "case_symptom": "湿度读数长时间不变，面板报 E108。",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E108",
+      "actual_cause_code": "SENSOR_FAULT",
+      "action": "self_service",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "传感器探头积尘，按手册清洁校准后读数恢复正常。"
+    },
+    {
+      "case_symptom": "制冷效果差，压缩机频繁启停并报 E105。",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E105",
+      "actual_cause_code": "COMPRESSOR_FAULT",
+      "action": "replace_part",
+      "parts_replaced": ["COMPRESSOR-UNIT"],
+      "resolved": true,
+      "note": "压缩机启动绕组阻值异常，更换压缩机总成后运行正常。"
+    },
+    {
+      "case_symptom": "风扇不转，面板显示 E106。",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E106",
+      "actual_cause_code": "FAN_BLOCKED",
+      "action": "self_service",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "冷凝器滤网积尘导致风道堵塞，清洁后风扇恢复转动。"
+    },
+    {
+      "case_symptom": "设备离线，App 无法连接，报 E103。",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E103",
+      "actual_cause_code": "NETWORK_CONFIG",
+      "action": "self_service",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "重新配网并升级路由器固件后恢复在线。"
+    },
+    {
+      "case_symptom": "温度读数异常，面板报 E108。",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E108",
+      "actual_cause_code": "SENSOR_FAULT",
+      "action": "replace_part",
+      "parts_replaced": ["SENSOR-KIT"],
+      "resolved": true,
+      "note": "传感器读数偏差超出容差，更换传感器组件后恢复。"
+    },
+    {
+      "case_symptom": "压缩机保护停机，报 E105 后再无法启动。",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E105",
+      "actual_cause_code": "COMPRESSOR_FAULT",
+      "action": "repair_center",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "压缩机绝缘失效，返厂更换压缩机总成。"
+    },
+    {
+      "case_symptom": "上电无反应，插座有电但设备不启动，报 E101。",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E101",
+      "actual_cause_code": "POWER_SUPPLY",
+      "action": "on_site",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "电源线插头氧化导致接触不良，更换电源线后恢复。"
+    },
+    {
+      "case_symptom": "制冷时风扇异响，风量下降，报 E106。",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E106",
+      "actual_cause_code": "FAN_MOTOR",
+      "action": "replace_part",
+      "parts_replaced": ["FAN-MOTOR-ASSY"],
+      "resolved": true,
+      "note": "扇叶无卡阻但电机轴承磨损，更换电机总成后噪声消失。"
+    },
+    {
+      "case_symptom": "风扇转速忽高忽低，报 E106。",
+      "device_model": "AuroraHome AC-Pro 1200",
+      "error_code": "E106",
+      "actual_cause_code": "FAN_DRIVER",
+      "action": "replace_part",
+      "parts_replaced": ["FAN-DRIVER-BOARD"],
+      "resolved": true,
+      "note": "驱动板输出波形异常，更换驱动板后转速稳定。"
+    },
+    {
+      "case_symptom": "风扇不转且电机发烫，报 E106。",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E106",
+      "actual_cause_code": "FAN_MOTOR",
+      "action": "replace_part",
+      "parts_replaced": ["FAN-MOTOR-ASSY"],
+      "resolved": true,
+      "note": "电机绕组短路，更换电机总成后恢复正常。"
+    },
+    {
+      "case_symptom": "设备频繁断电重启，报 E101。",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E101",
+      "actual_cause_code": "POWER_WIRING",
+      "action": "on_site",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "内部电源线端子松动，重新压接后稳定。"
+    },
+    {
+      "case_symptom": "整机无电，断路器未跳闸，报 E101。",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E101",
+      "actual_cause_code": "GENERAL_POWER",
+      "action": "self_service",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "用户误触漏保测试键，复位后恢复供电。"
+    },
+    {
+      "case_symptom": "制冷效率下降并触发 E105 保护。",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E105",
+      "actual_cause_code": "CONDENSER_BLOCKED",
+      "action": "self_service",
+      "parts_replaced": [],
+      "resolved": true,
+      "note": "冷凝器积尘导致散热不良，清洁翅片后保护消除。"
+    },
+    {
+      "case_symptom": "设备离线，重启无效，报 E103。",
+      "device_model": "NovaDesk PX-220",
+      "error_code": "E103",
+      "actual_cause_code": "NETWORK_MODULE",
+      "action": "replace_part",
+      "parts_replaced": ["WIFI-MODULE"],
+      "resolved": true,
+      "note": "Wi-Fi 模块固件损坏，售后更换通信模块后恢复。"
+    },
+    {
+      "case_symptom": "湿度读数跳变，报 E108。",
+      "device_model": "AuroraHome AC-Mini 600",
+      "error_code": "E108",
+      "actual_cause_code": "SENSOR_WIRING",
+      "action": "replace_part",
+      "parts_replaced": ["SENSOR-HARNESS"],
+      "resolved": true,
+      "note": "传感器信号线破皮短路，更换线束后读数稳定。"
+    },
+    {
+      "case_symptom": "制冷不足并报 E105，压力偏低。",
+      "device_model": "VentoCool FZ-30",
+      "error_code": "E105",
+      "actual_cause_code": "REFRIGERANT_LEAK",
+      "action": "repair_center",
+      "parts_replaced": [],
+      "resolved": false,
+      "note": "补充制冷剂后压力仍下降，判定管路泄漏，需返厂检漏。"
+    },
+    {
+      "case_symptom": "面板显示异常并报 E108。",
+      "device_model": "NovaDesk PX-450",
+      "error_code": "E108",
+      "actual_cause_code": "GENERAL_CONTROL",
+      "action": "repair_center",
+      "parts_replaced": [],
+      "resolved": false,
+      "note": "实际为主控板故障导致误报传感器错误，需更换控制板。"
+    }
+  ]
+}

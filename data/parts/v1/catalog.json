@@ -1,0 +1,255 @@
+{
+  "dataset_version": "v1",
+  "source": "simulated",
+  "note": "演示用模拟配件目录：件号、库存状态、硬件适用区间与兼容关系均非真实供应链数据。替代件 `<主件号>-R2` 由 seed_parts.py 随主件写入（默认 in_stock）。",
+  "models": [
+    {
+      "device_model": "AuroraHome AC-Pro 1200",
+      "parts": [
+        {
+          "part_no": "FAN-BLADE-KIT",
+          "name": "贯流风扇扇叶组件",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "FAN-MOTOR-ASSY",
+          "name": "风扇电机总成",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "FAN-DRIVER-BOARD",
+          "name": "风扇驱动板",
+          "stock_status": "low_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "POWER-SUPPLY-UNIT",
+          "name": "电源模块",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "FAN-MOTOR-ASSY-R2",
+          "name": "风扇电机总成（R2 替代件）",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        }
+      ],
+      "compatibilities": [
+        {
+          "source_part_no": "FAN-MOTOR-ASSY",
+          "target_part_no": "FAN-MOTOR-ASSY-R2",
+          "compatibility_type": "replacement",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "servicenote:AC1200-2024-03"
+        },
+        {
+          "source_part_no": "FAN-BLADE-KIT",
+          "target_part_no": "FAN-DRIVER-BOARD",
+          "compatibility_type": "incompatible",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "模拟数据：扇叶与驱动板不可互替"
+        }
+      ]
+    },
+    {
+      "device_model": "AuroraHome AC-Mini 600",
+      "parts": [
+        {
+          "part_no": "FAN-BLADE-KIT",
+          "name": "贯流风扇扇叶组件",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "FAN-MOTOR-ASSY",
+          "name": "风扇电机总成",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "POWER-WIRING-HARNESS",
+          "name": "电源线束",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "SENSOR-KIT",
+          "name": "温度传感器组件",
+          "stock_status": "low_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "FAN-MOTOR-ASSY-R2",
+          "name": "风扇电机总成（R2 替代件）",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        }
+      ],
+      "compatibilities": [
+        {
+          "source_part_no": "SENSOR-KIT",
+          "target_part_no": "POWER-WIRING-HARNESS",
+          "compatibility_type": "incompatible",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "模拟数据：传感器组件与线束不可互替"
+        }
+      ]
+    },
+    {
+      "device_model": "NovaDesk PX-220",
+      "parts": [
+        {
+          "part_no": "POWER-SUPPLY-UNIT",
+          "name": "电源模块",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "CONTROL-BOARD",
+          "name": "主控板",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "SENSOR-KIT",
+          "name": "温度传感器组件",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "WIFI-MODULE",
+          "name": "Wi-Fi 通信模块",
+          "stock_status": "out_of_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "CONTROL-BOARD-R2",
+          "name": "主控板（R2 替代件）",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        }
+      ],
+      "compatibilities": [
+        {
+          "source_part_no": "CONTROL-BOARD",
+          "target_part_no": "CONTROL-BOARD-R2",
+          "compatibility_type": "replacement",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "servicenote:PX-220-2024-02"
+        },
+        {
+          "source_part_no": "POWER-SUPPLY-UNIT",
+          "target_part_no": "WIFI-MODULE",
+          "compatibility_type": "incompatible",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "模拟数据：电源模块与通信模块不可互替"
+        }
+      ]
+    },
+    {
+      "device_model": "NovaDesk PX-450",
+      "parts": [
+        {
+          "part_no": "POWER-SUPPLY-UNIT",
+          "name": "电源模块",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "CONTROL-BOARD",
+          "name": "主控板",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "WIFI-MODULE",
+          "name": "Wi-Fi 通信模块",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "SENSOR-HARNESS",
+          "name": "传感器线束",
+          "stock_status": "low_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "WIFI-MODULE-R2",
+          "name": "Wi-Fi 通信模块（R2 替代件）",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        }
+      ],
+      "compatibilities": [
+        {
+          "source_part_no": "WIFI-MODULE",
+          "target_part_no": "WIFI-MODULE-R2",
+          "compatibility_type": "replacement",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "servicenote:PX-450-2024-05"
+        },
+        {
+          "source_part_no": "CONTROL-BOARD",
+          "target_part_no": "SENSOR-HARNESS",
+          "compatibility_type": "incompatible",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "模拟数据：主控板与传感器线束不可互替"
+        }
+      ]
+    },
+    {
+      "device_model": "VentoCool FZ-30",
+      "parts": [
+        {
+          "part_no": "COMPRESSOR-UNIT",
+          "name": "压缩机总成",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "CONDENSER-FILTER",
+          "name": "冷凝器滤网",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "POWER-WIRING-HARNESS",
+          "name": "电源线束",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "SENSOR-HARNESS",
+          "name": "传感器线束",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        },
+        {
+          "part_no": "COMPRESSOR-UNIT-R2",
+          "name": "压缩机总成（R2 替代件）",
+          "stock_status": "in_stock",
+          "hardware_range": "HW-1.0~HW-3.9"
+        }
+      ],
+      "compatibilities": [
+        {
+          "source_part_no": "COMPRESSOR-UNIT",
+          "target_part_no": "COMPRESSOR-UNIT-R2",
+          "compatibility_type": "replacement",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "servicenote:FZ-30-2024-01"
+        },
+        {
+          "source_part_no": "CONDENSER-FILTER",
+          "target_part_no": "SENSOR-HARNESS",
+          "compatibility_type": "incompatible",
+          "hardware_range": "HW-1.0~HW-3.9",
+          "evidence_source": "模拟数据：滤网与传感器线束不可互替"
+        }
+      ]
+    }
+  ]
+}

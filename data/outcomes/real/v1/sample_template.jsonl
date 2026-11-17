@@ -1,0 +1,3 @@
+{"error_code": "E106", "device_model": "AuroraHome AC-Pro 1200", "case_symptom": "开机后风扇不转，面板显示 E106", "actual_cause_code": "FAN_BLOCKED", "action": "清理扇叶异物并复位", "parts_replaced": [], "resolved": true, "note": "模板示例，非真实数据"}
+{"error_code": "E101", "device_model": "NovaDesk PX-220", "case_symptom": "整机不上电，指示灯不亮", "actual_cause_code": "POWER_SUPPLY", "action": "更换电源模块", "parts_replaced": ["POWER-SUPPLY-UNIT"], "resolved": true, "note": "模板示例，非真实数据"}
+{"error_code": "E108", "device_model": "VentoCool FZ-30", "case_symptom": "传感器读数异常，显示 E108", "actual_cause_code": "SENSOR_WIRING", "action": "重新插接传感器线束", "parts_replaced": [], "resolved": true, "note": "模板示例，非真实数据"}

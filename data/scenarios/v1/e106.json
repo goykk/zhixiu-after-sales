@@ -1,0 +1,75 @@
+{
+  "id": "scenario-e106-fan-blocked",
+  "dataset_version": "v1",
+  "device_model": "AuroraHome AC-Pro 1200",
+  "error_code": "E106",
+  "true_cause_code": "FAN_BLOCKED",
+  "description": "空调报 E106 风扇转速异常，真根因为扇叶被异物卡阻；三个变体逐步补充照片与检查结果，结论必须收敛到 FAN_BLOCKED。",
+  "variants": [
+    {
+      "id": "text_only",
+      "symptom": "制冷时风扇区域有摩擦异响，出风很小，面板显示 E106。",
+      "evidence": [
+        {
+          "source_type": "customer",
+          "polarity": "support",
+          "quote": "风扇转动时有明显的摩擦和刮擦声，像是扇叶被什么东西卡住了。"
+        },
+        {
+          "source_type": "customer",
+          "polarity": "support",
+          "quote": "出风口几乎不出风，扇叶有抖动，偶尔卡住不动，积尘也比较多。"
+        }
+      ],
+      "upload": null,
+      "probe_answers": {
+        "ASK_SOUND": "有摩擦或刮擦声",
+        "PHOTO_BLADE": "叶片有异物或变形",
+        "CHECK_ROTATION": "拨动叶片旋转顺畅"
+      }
+    },
+    {
+      "id": "with_photo",
+      "symptom": "风扇有异响且风量下降，用户补充了出风口照片。",
+      "evidence": [
+        {
+          "source_type": "customer",
+          "polarity": "support",
+          "quote": "风扇那边一直有摩擦的异响，出风很小，像是被异物卡住。"
+        },
+        {
+          "source_type": "manual",
+          "polarity": "support",
+          "quote": "手册《风扇与风道排查》第 1 页：断电后拨动扇叶有明显异物阻力或扇叶变形，判定为风扇卡阻 FAN_BLOCKED。"
+        }
+      ],
+      "upload": {
+        "filename": "photo-ac-pro-1200.png",
+        "content_type": "image/png",
+        "text": "出风口照片：扇叶边缘夹着塑料薄膜与灰尘块，叶片有轻微变形。"
+      },
+      "probe_answers": {
+        "ASK_SOUND": "有摩擦或刮擦声",
+        "PHOTO_BLADE": "叶片有异物或变形",
+        "CHECK_ROTATION": "拨动叶片旋转顺畅"
+      }
+    },
+    {
+      "id": "with_probe_result",
+      "symptom": "现场已做过手动拨叶检查，需要补充检查结果后给出结论。",
+      "evidence": [
+        {
+          "source_type": "customer",
+          "polarity": "support",
+          "quote": "风扇有摩擦异响，手动拨动叶片时能感觉到异物阻力，扇叶有卡滞。"
+        }
+      ],
+      "upload": null,
+      "probe_answers": {
+        "ASK_SOUND": "有摩擦或刮擦声",
+        "PHOTO_BLADE": "叶片有异物或变形",
+        "CHECK_ROTATION": "拨动叶片旋转顺畅"
+      }
+    }
+  ]
+}

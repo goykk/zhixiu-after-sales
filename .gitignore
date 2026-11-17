@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 运行期数据（保留 data/manuals、data/scenarios 等入库内容）
+data/app.db
+data/*.db
+data/uploads/
+data/traces/
+data/reports/
+
+# 前端
+node_modules/
+.next/
+out/
+dist/
+apps/web/.next/
+apps/web/node_modules/
+
+# 其他
+*.log
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+# 不上传：其它项目、规划目录与本地产物
+changeproof/
+metrictrace/
+.codeartsdoer/
+.arts/
+ChangeProof-项目理解与分工规划.md
+MetricTrace-项目理解与分工规划.md
+业务指标异动归因与决策系统项目计划书.md
+软件变更影响分析与回归测试平台项目计划书.md
+data/tmp_*
+data/otlp_*
